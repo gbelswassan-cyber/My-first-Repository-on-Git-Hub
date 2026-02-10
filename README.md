@@ -1,5 +1,3 @@
-داخلا فارم ڀرڻ 
-index.html
 <!DOCTYPE html>
 <html lang="sd" dir="rtl">
 <head>
@@ -83,29 +81,4 @@ index.html
         var roll = document.getElementById('rollNo').value;
         var display = document.getElementById('resultDisplay');
         
-        // رزلٽ رڪارڊ
-        var data = {
-            "101": "نالو: محمد علي وسڻ | نمبر: 750 (A+)",
-            "102": "نالو: احمد رضا | نمبر: 720 (A)",
-            "103": "نالو: سائره ٻانو | نمبر: 710 (A)"
-        };
-
-        if(data[roll]) {
-            display.style.color = "green";
-            display.innerHTML = "✅ " + data[roll];
-        } else {
-            display.style.color = "red";
-            display.innerHTML = "❌ معاف ڪجو، هي رول نمبر موجود ناهي.";
-        }
-    }
-</script>
-
-</body>
-</html>
-
-<div style="text-align: center; margin: 20px;">
-    <a href="هتي_پنهنجي_فارم_جي_لنڪ_پيسٽ_ڪريو" target="_blank" 
-       style="background-color: #d32f2f; color: white; padding: 15px 30px; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block;">
-        آن لائن داخلا فارم ڀريو 📝
-    </a>
-</div>
+ 
