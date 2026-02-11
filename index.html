@@ -31,13 +31,14 @@
         table { width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden; }
         th { background: var(--primary); color: white; padding: 18px; }
         td { padding: 15px; border-bottom: 1px solid #eee; }
-        .badge { background: #eef2f7; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid var(--primary); }
-        .qual-badge { background: var(--secondary); color: #000; padding: 3px 8px; border-radius: 5px; font-size: 11px; font-weight: bold; margin-left: 5px; }
         
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
         .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 2px solid #eee; }
         
+        /* Footer link styling */
         footer { background: #111; color: white; padding: 40px 20px; text-align: center; direction: ltr; }
+        footer a { color: var(--secondary); text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -62,8 +63,6 @@
         <h2>اسان جا مقصد (Our Mission)</h2>
         <p>
             گورنمينٽ بوائز ايليمينٽري لوئر سيڪنڊري اسڪول وسڻ جو مقصد ٻارن کي جديد ۽ اعليٰ معيار جي تعليم فراهم ڪرڻ آهي۔
-            <br>✅ شاگردن ۾ اخلاقي، علمي ۽ ذهني صلاحيتون پيدا ڪيون وڃن۔
-            <br>✅ علائقي جي ٻارن کي جديد دور جي چئلينجز لاءِ تيار ڪيو وڃي۔
         </p>
     </div>
 
@@ -87,16 +86,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td><strong>Sarfaraz Ali Wassan</strong></td><td>10718953</td><td><span class="badge">PST (BPS-14)</span></td><td><span class="qual-badge">M.A + M.Phil</span></td></tr>
-                <tr><td><strong>Muneer Ahmed</strong></td><td>11016864</td><td><span class="badge">PST (BPS-14)</span></td><td><span class="qual-badge">M.A + B.Ed</span></td></tr>
-                <tr><td><strong>Ali Sher Wassan</strong></td><td>10381947</td><td><span class="badge">PST (BPS-16)</span></td><td><span class="qual-badge">B.A + P.T.C</span></td></tr>
-                <tr><td><strong>Toqeer Ahmed</strong></td><td>11116636</td><td><span class="badge">PST (BPS-14)</span></td><td><span class="qual-badge">MSc Mathematics</span></td></tr>
-                <tr><td><strong>Aftab Ahmed Mooro</strong></td><td>10718932</td><td><span class="badge">PST (BPS-14)</span></td><td><span class="qual-badge">M.A + M.Ed</span></td></tr>
-                <tr><td><strong>Iftikhar Ahmed</strong></td><td>10829825</td><td><span class="badge">PST (BPS-14)</span></td><td><span class="qual-badge">M.A + M.Ed</span></td></tr>
-                <tr><td><strong>Mehdi Khoso</strong></td><td>10718934</td><td><span class="badge">PST (BPS-14)</span></td><td><span class="qual-badge">M.A + M.Ed</span></td></tr>
-                <tr><td><strong>Nek Muhammad</strong></td><td>10718971</td><td><span class="badge">PST (BPS-14)</span></td><td><span class="qual-badge">M.A + M.Ed</span></td></tr>
-                <tr><td><strong>Mushtaque Ahmed</strong></td><td>10713543</td><td><span class="badge" style="border-color: red; color: red;">CHOWKIDAR (BPS-2)</span></td><td><span class="qual-badge">Primary</span></td></tr>
-            </tbody>
+                <tr><td><strong>Sarfaraz Ali Wassan</strong></td><td>10718953</td><td>PST (BPS-14)</td><td>M.A + M.Phil</td></tr>
+                <tr><td><strong>Ali Sher Wassan</strong></td><td>10381947</td><td>PST (BPS-16)</td><td>B.A + P.T.C</td></tr>
+                <tr><td><strong>Toqeer Ahmed</strong></td><td>11116636</td><td>PST (BPS-14)</td><td>MSc Mathematics</td></tr>
+                </tbody>
         </table>
     </div>
 
@@ -105,16 +98,14 @@
         <div class="gallery-item"><img src="img 2.png"></div>
         <div class="gallery-item"><img src="img 3.png"></div>
         <div class="gallery-item"><img src="img 4.png"></div>
-        <div class="gallery-item"><img src="img 5.png"></div>
-        <div class="gallery-item"><img src="img 6.png"></div>
-        <div class="gallery-item"><img src="img 7.png"></div>
     </div>
 </div>
 
 <footer>
     <p>GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</p>
     <p>ڳوٺ محمد شريف وسڻ، نوشهروفيروز</p>
-    <p>WhatsApp: +923008909756 | Email: gbelswassan@gmail.com</p>
+    <p>WhatsApp: <a href="https://wa.me/923008909756">+923008909756</a></p>
+    <p>Email: <a href="mailto:gbelswassan@gmail.com">gbelswassan@gmail.com</a></p>
     <p>© 2026 GBELS WASSAN | Official Web Portal</p>
 </footer>
 
