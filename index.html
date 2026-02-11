@@ -5,108 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GBELS WASSAN - Official Website</title>
     <style>
-        /* General Styling */
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            text-align: center; 
-            background-color: #f4f7f6; 
-            color: #333;
-        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; text-align: center; background-color: #f4f7f6; color: #333; }
+        header { background-color: #004d40; color: white; padding: 40px 20px; border-bottom: 6px solid #ffcc00; }
+        .logo { width: 160px; border-radius: 50%; border: 4px solid #fff; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .info-bar { font-size: 0.9em; background: #ffd600; color: #000; padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: bold; margin-top: 10px; }
         
-        /* Header Section */
-        header { 
-            background-color: #004d40; 
-            color: white; 
-            padding: 50px 20px; 
-            border-bottom: 6px solid #ffcc00; 
-        }
-        .logo { 
-            width: 160px; 
-            border-radius: 50%; 
-            border: 4px solid #fff; 
-            margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        h1 { margin: 10px 0; font-size: 2.2em; }
-        .info-bar { 
-            font-size: 0.9em; 
-            background: #ffd600; 
-            color: #000; 
-            padding: 8px 20px; 
-            border-radius: 20px; 
-            display: inline-block; 
-            font-weight: bold; 
-            margin-top: 10px;
-        }
-
-        /* Stats Cards */
-        .stats-container { 
-            display: flex; 
-            justify-content: center; 
-            gap: 20px; 
-            padding: 40px 10px; 
-            flex-wrap: wrap; 
-        }
-        .stat-box { 
-            background: white; 
-            padding: 20px; 
-            border-radius: 15px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-            width: 140px; 
-            border-top: 6px solid #004d40; 
-        }
-        .stat-box h4 { margin: 0; color: #777; font-size: 0.9em; }
+        .stats-container { display: flex; justify-content: center; gap: 20px; padding: 40px 10px; flex-wrap: wrap; }
+        .stat-box { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 140px; border-top: 6px solid #004d40; }
         .stat-box p { font-size: 2em; font-weight: bold; margin: 5px 0; color: #004d40; }
 
-        /* Staff Table Section */
-        .table-section { padding: 30px 20px; max-width: 1000px; margin: 0 auto; }
-        .staff-table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            background: white; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .staff-table th, .staff-table td { 
-            border: 1px solid #eee; 
-            padding: 15px; 
-            text-align: left; 
-        }
+        .table-section { padding: 30px 20px; max-width: 1000px; margin: 0 auto; overflow-x: auto; }
+        .staff-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
+        .staff-table th, .staff-table td { border: 1px solid #eee; padding: 15px; text-align: left; }
         .staff-table th { background-color: #004d40; color: white; }
         .staff-table tr:nth-child(even) { background-color: #f9f9f9; }
+        .head-master { font-weight: bold; background-color: #e8f5e9 !important; }
 
-        /* Map Section */
         .map-section { padding: 40px 20px; background-color: #fff; }
-        .map-container { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            border: 5px solid #004d40; 
-            border-radius: 15px; 
-            overflow: hidden; 
-        }
+        .map-container { max-width: 1000px; margin: 0 auto; border: 5px solid #004d40; border-radius: 15px; overflow: hidden; }
 
-        /* Footer */
-        footer { 
-            padding: 40px 20px; 
-            background: #004d40; 
-            color: white; 
-            margin-top: 40px; 
-        }
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
-        .whatsapp-btn:hover { background-color: #1ebe57; }
+        footer { padding: 40px 20px; background: #004d40; color: white; margin-top: 40px; }
+        .whatsapp-btn { background-color: #25D366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-flex; align-items: center; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -121,12 +40,12 @@
     <div class="stats-container">
         <div class="stat-box"><h4>Total Students</h4><p>330</p></div>
         <div class="stat-box"><h4>Boys</h4><p>149</p></div>
-        <div class="stat-box"><h4>Girls</h4><p>181</p></div>
+        <div class="stat-box)<h4>Girls</h4><p>181</p></div>
         <div class="stat-box"><h4>Staff</h4><p>09</p></div>
     </div>
 
     <div class="table-section">
-        <h2>Staff Directory</h2>
+        <h2>Complete Staff Directory</h2>
         <table class="staff-table">
             <thead>
                 <tr>
@@ -136,6 +55,8 @@
                 </tr>
             </thead>
             <tbody>
+                <tr class="head-master"><td>Sarfraz Ali Wassan s/o Roshan Ali</td><td>PST (BPS-09) - <b>Head Master</b></td><td>M.A</td></tr>
+                
                 <tr><td>Muneer Ahmed s/o Ghulam Rasool</td><td>PST (BPS-14)</td><td>B.A</td></tr>
                 <tr><td>Taufique Ahmed s/o Bashir Ahmed</td><td>PST (BPS-14)</td><td>B.Sc</td></tr>
                 <tr><td>Aftab Ahmed Moro</td><td>PST (BPS-09)</td><td>M.A</td></tr>
@@ -143,7 +64,6 @@
                 <tr><td>Iftikhar Ahmed Moro</td><td>PST (BPS-09)</td><td>M.A</td></tr>
                 <tr><td>Mehdi Kouso s/o Ali Nawaz</td><td>PST (BPS-09)</td><td>M.A</td></tr>
                 <tr><td>Nek Muhammad s/o Door Muhammad</td><td>PST (BPS-09)</td><td>M.A</td></tr>
-                <tr><td>Sarfraz Ali Wassan s/o Roshan Ali</td><td>PST (BPS-09)</td><td>M.A</td></tr>
             </tbody>
         </table>
     </div>
@@ -151,18 +71,17 @@
     <div class="map-section">
         <h2>Our Location</h2>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.0!2d68.1234567!3d26.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzM0LjQiTiA2OMKwMDcnMjQuNCJF!5e0!3m2!1sen!2spk!4v1620000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.0!2d68.0!3d26.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDAwJzAwLjAiTiA2OMKwMDAnMDAuMCJF!5e0!3m2!1sen!2spk!4v1700000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 
     <footer>
-        <p><strong>Address:</strong> Wassan, District Naushahro Feroze, Sindh</p>
+        <p><strong>Address:</strong> Wassan Abad, District Naushahro Feroze, Sindh</p>
         <p><strong>Contact:</strong> <a href="tel:+923008909756" style="color: #ffcc00; text-decoration: none;">+92 300 8909756</a></p>
         
         <a href="https://wa.me/923008909756" target="_blank" class="whatsapp-btn">
             Chat on WhatsApp
         </a>
-
         <p style="margin-top: 25px; font-size: 0.8em; opacity: 0.7;">© 2026 GBELS WASSAN. All Rights Reserved.</p>
     </footer>
 
