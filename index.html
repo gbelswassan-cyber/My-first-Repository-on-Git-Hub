@@ -1,139 +1,55 @@
-index.html
 <!DOCTYPE html>
 <html lang="sd" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GBELS Wassan | آفيشل اسڪول پورٽل</title>
+    <title>GBELS Wassan</title>
     <style>
-        :root { --primary-color: #004d40; --secondary-color: #ffc107; --dark-bg: #1c1e21; --light-bg: #f4f7f6; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: #333; scroll-behavior: smooth; }
-        
-        header { background: var(--primary-color); color: white; padding: 40px 20px; text-align: center; border-bottom: 8px solid var(--secondary-color); }
-        .logo { width: 100px; height: 100px; background: white; border-radius: 50%; padding: 5px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        
-        nav { background: #242526; display: flex; justify-content: center; padding: 10px 0; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: bold; transition: 0.3s; }
-        nav a:hover { color: var(--secondary-color); }
-
-        section { padding: 60px 20px; max-width: 1100px; margin: auto; }
-        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 40px; font-size: 2em; border-bottom: 4px solid var(--secondary-color); display: inline-block; padding-bottom: 10px; position: relative; left: 50%; transform: translateX(-50%); }
-
-        /* Stats Section */
-        .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .stat-card { background: white; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-color); }
-        .stat-card h2 { font-size: 2.5em; margin: 10px 0; color: var(--primary-color); }
-
-        /* Table Styles */
-        .info-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .info-table th { background: var(--primary-color); color: white; padding: 15px; text-align: right; }
-        .info-table td { padding: 12px 15px; border-bottom: 1px solid #eee; text-align: right; }
-
-        /* Map & Contact Box */
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .contact-box { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border-right: 8px solid var(--secondary-color); }
-        .map-btn { display: inline-block; background: var(--primary-color); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 15px; transition: 0.3s; }
-        .map-btn:hover { background: var(--secondary-color); color: black; }
-
-        footer { background: var(--dark-bg); color: #aaa; padding: 40px 20px; text-align: center; }
-        .badge { background: var(--secondary-color); color: black; padding: 4px 12px; border-radius: 20px; font-size: 0.8em; font-weight: bold; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; }
+        .header { background-color: #004d40; color: white; padding: 30px; text-align: center; }
+        .school-logo { width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; margin-bottom: 15px; }
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; }
+        .section { background: white; padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .lang-en { direction: ltr; text-align: left; font-family: Arial, sans-serif; color: #555; border-top: 1px solid #eee; margin-top: 15px; pt: 10px; }
+        h1, h2 { margin-top: 0; color: #004d40; }
+        .contact-info p { margin: 5px 0; font-size: 18px; }
     </style>
 </head>
 <body>
 
-<header id="home">
-    <img src="https://via.placeholder.com/100?text=GBELS" alt="Logo" class="logo">
-    <h1>گورنمينٽ بوائز ايليمينٽري لوئر سيڪنڊري اسڪول وسڻ</h1>
-    <p>SEMIS ID: 416040489 | ضلعو: نوشهرو فيروز</p>
-</header>
-
-<nav>
-    <a href="#home">هوم</a>
-    <a href="#stats">رڪارڊ</a>
-    <a href="#staff">استاد</a>
-    <a href="#results">رزلٽ</a>
-    <a href="#contact">رابطو</a>
-</nav>
-
-<section id="stats">
-    <h2 class="section-title">اسڪول جا انگ اکر</h2>
-    <div class="stats-container">
-        <div class="stat-card"><h3>ڪل شاگرد</h3><h2>330</h2></div>
-        <div class="stat-card"><h3>ڇوڪرا</h3><h2>149</h2></div>
-        <div class="stat-card"><h3>ڇوڪريون</h3><h2>181</h2></div>
-        <div class="stat-card"><h3>اسٽاف</h3><h2>09</h2></div>
+    <div class="header">
+        <img src="logo.png" alt="School Logo" class="school-logo">
+        <h1>گورنمينٽ بوائز ايليمينٽري لوئر سيڪنڊري اسڪول وسڻ</h1>
+        <p>Government Boys Elementary Lower Secondary School Wassan</p>
     </div>
-</section>
 
-<section id="staff">
-    <h2 class="section-title">تعليمي عملو</h2>
-    <table class="info-table">
-        <thead>
-            <tr><th>استاد جو نالو</th><th>عهدو</th><th>قابليت</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>منير احمد پٽ غلام رسول</td><td>PST (BPS-14)</td><td>B.A</td></tr>
-            <tr><td>توفيق احمد پٽ بشير احمد</td><td>PST (BPS-14)</td><td>B.Sc</td></tr>
-            <tr><td>آفتاب احمد مورو</td><td>PST (BPS-09)</td><td>M.A</td></tr>
-            <tr><td>علي شير وسڻ</td><td>PST (BPS-09)</td><td>B.A / PTC</td></tr>
-            <tr><td>افتخار احمد مورو</td><td>PST (BPS-09)</td><td>M.A</td></tr>
-            <tr><td>مهدي کوسو پٽ علي نواز</td><td>PST (BPS-09)</td><td>M.A</td></tr>
-            <tr><td>نيڪ محمد پٽ دور محمد</td><td>PST (BPS-09)</td><td>M.A</td></tr>
-            <tr><td>سرفراز علي وسڻ پٽ روشن علي</td><td>PST (BPS-09)</td><td>M.A</td></tr>
-        </tbody>
-    </table>
-</section>
-
-<section id="results" style="background: #e9ecef; max-width: 100%;">
-    <div style="max-width: 1100px; margin: auto; padding: 20px;">
-        <h2 class="section-title">ٽاپ پوزيشن هولڊرز</h2>
-        <table class="info-table">
-            <thead>
-                <tr><th>پوزيشن</th><th>نالو</th><th>ڪلاس</th><th>نمبر</th></tr>
-            </thead>
-            <tbody>
-                <tr><td><span class="badge">پهرين</span></td><td>محمد علي وسڻ</td><td>پنجين</td><td>750/850</td></tr>
-                <tr><td><span class="badge" style="background: #ccc;">ٻي</span></td><td>احمد رضا</td><td>پنجين</td><td>720/850</td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section id="contact">
-    <h2 class="section-title">اسان سان رابطو ڪريو</h2>
-    <div class="grid-layout">
-        <div class="contact-box">
-            <h3>رابطي جي معلومات</h3>
-            <p>📧 <strong>ايميل:</strong> <a href="mailto:gbelswassan@gmail.com">gbelswassan@gmail.com</a></p>
-            <p>📞 <strong>فون:</strong> +923013875347</p>
-            <p>📍 <strong>پتو:</strong> وسڻ آباد، نوشهرو فيروز</p>
-            <a href="https://wa.me/923013875347" target="_blank" class="map-btn" style="background: #25d366;">واٽس اپ رابطو</a>
+    <div class="container">
+        <div class="section">
+            <h2>اسڪول بابت (About Us)</h2>
+            <p>اسان جو اسڪول ضلعو نوشهرو فيروز جو هڪ اهم تعليمي ادارو آهي، جتي شاگردن جي تعليم ۽ تربيت تي خاص توجه ڏني ويندي آهي.</p>
+            <div class="lang-en">
+                <p>Our school is a prominent educational institution in District Naushahro Feroze, focusing on the quality education and character building of students.</p>
+            </div>
         </div>
-        
-        <div class="contact-box">
-            <h3>گوگل ميپ لوڪيشن</h3>
-            <iframe src="https://maps.app.goo.gl/YourActualMapLink4" width="100%" height="200" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
-            <a href="https://maps.app.goo.gl/YourActualMapLink5" target="_blank" class="map-btn">ميپ تي رستو ڏسو</a>
+
+        <div class="section">
+            <h2>اسڪول جا انگ اکر (School Statistics)</h2>
+            <p>ڪل شاگرد: 330 | استاد: 09</p>
+            <div class="lang-en">
+                <p>Total Students: 330 | Staff: 09</p>
+            </div>
+        </div>
+
+        <div class="section contact-info">
+            <h2>رابطو ڪريو (Contact Us)</h2>
+            <p>📍 <b>پتو:</b> وسڻ، ضلعو نوشهرو فيروز، سنڌ</p>
+            <p>📞 <b>فون:</b> 0000-0000000</p>
+            <div class="lang-en">
+                <p>📍 <b>Address:</b> Wassan, District Naushahro Feroze, Sindh</p>
+                <p>📞 <b>Phone:</b> 0000-0000000</p>
+            </div>
         </div>
     </div>
-</section>
-
-<footer>
-    <p>© 2026 گورنمينٽ بوائز ايليمينٽري لوئر سيڪنڊري اسڪول وسڻ</p>
-    <p>بنايو ويو: Gemini AI پاران</p>
-</footer>
 
 </body>
-                               </html>
-<div style="text-align: center; margin: 20px;">
-    <a href="هتي_پنهنجي_فارم_جي_لنڪ_پيسٽ_ڪريو" target="_blank" 
-       style="background-color: #d32f2f; color: white; padding: 15px 30px; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block;">
-        آن لائن داخلا فارم ڀريو 📝
-    </a>
-</div>
-<div style="text-align: center; margin: 20px;">
-    <a href="هتي_پنهنجي_فارم_جي_لنڪ_پيسٽ_ڪريو" target="_blank" 
-       style="background-color: #d32f2f; color: white; padding: 15px 30px; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block;">
-        آن لائن داخلا فارم ڀريو 📝
-    </a>
-</div>
+</html>
