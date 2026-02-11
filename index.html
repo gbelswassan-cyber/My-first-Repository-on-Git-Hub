@@ -1,71 +1,180 @@
 <!DOCTYPE html>
-<html lang="sd">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GBELS Wassan | Education Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lateef&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>GBELS Wassan | Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #059669; --secondary: #1e40af; --bg: #f8fafc; }
-        body { font-family: 'Poppins', 'Lateef', sans-serif; background: var(--bg); margin: 0; padding: 0; text-align: center; }
-        .header { background: linear-gradient(135deg, var(--primary), #10b981); color: white; padding: 50px 20px; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
-        .container { max-width: 1000px; width: 94%; margin: -40px auto 50px auto; }
-        .card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 25px; }
-        .sindhi { font-family: 'Lateef', serif; font-size: 2.2rem; direction: rtl; margin: 10px 0; }
+        :root {
+            --primary-color: #004d40;
+            --secondary-color: #00796b;
+            --accent-color: #ffc107;
+            --whatsapp-color: #25d366;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header with Logo */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 60px 20px 100px;
+            text-align: center;
+        }
+
+        .logo-container img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            background-color: white;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        header h1 { margin: 10px 0; font-size: 2.6rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        header p { font-weight: 300; font-size: 1.1rem; opacity: 0.9; }
+
+        .container {
+            max-width: 1100px;
+            margin: -60px auto 40px;
+            padding: 0 20px;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .stat-card h3 { font-size: 2.2rem; margin: 0; color: var(--primary-color); }
+        .stat-card p { margin: 5px 0 0; color: #666; font-weight: 600; text-transform: uppercase; }
+
+        /* Content Sections */
+        .section {
+            background: var(--white);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .section h2 { color: var(--primary-color); border-left: 5px solid var(--accent-color); padding-left: 15px; margin-bottom: 20px; }
+
+        /* Table Styling */
+        .table-wrapper { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background-color: var(--primary-color); color: var(--white); text-align: left; padding: 15px; }
+        td { padding: 15px; border-bottom: 1px solid #eee; }
         
-        /* Links Styling */
-        .links-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
-        .quick-link { display: flex; align-items: center; justify-content: center; padding: 15px; background: #f1f5f9; border-radius: 12px; text-decoration: none; color: var(--secondary); border: 1px solid #e2e8f0; font-weight: 600; transition: 0.3s; }
-        .quick-link:hover { background: var(--secondary); color: white; transform: translateY(-3px); }
-        .quick-link i { margin-left: 10px; font-size: 1.2rem; }
+        /* Highlighting Head Master Row */
+        .head-master-row { background-color: #e0f2f1; font-weight: 600; color: var(--primary-color); }
 
-        /* Stats Box */
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; direction: rtl; }
-        .stat-item { background: #ecfdf5; padding: 10px; border-radius: 10px; border: 1px solid var(--primary); }
+        /* Contact & Buttons */
+        .contact-info p { font-size: 1.1rem; margin: 10px 0; }
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: var(--whatsapp-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
 
-        .whatsapp-btn { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
+        .whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
+
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px 20px; margin-top: 60px; }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <h1 class="sindhi" style="text-align: center; color: white; margin: 0;">گورنمينٽ بوائز ايليمينٽري اسڪول واسڻ</h1>
-        <p>SEMIS Code: 416040489 | District Naushero Feroze</p>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="School Logo" onerror="this.src='https://via.placeholder.com/140?text=GBELS+Wassan'">
+        </div>
+        <h1>GBELS Wassan</h1>
+        <p>Govt. Boys Elementary Lower Secondary School, Naushahro Feroze</p>
     </header>
 
     <div class="container">
-        <div class="card">
-            <h2 class="sindhi">اسڪول جي معلومات (Stats)</h2>
-            <div class="stats-grid">
-                <div class="stat-item"><h4>330</h4><p>ڪل شاگرد</p></div>
-                <div class="stat-item"><h4>181</h4><p>ڇوڪريون</p></div>
-                <div class="stat-item"><h4>149</h4><p>ڇوڪرا</p></div>
+        <div class="stats-grid">
+            <div class="stat-card"><h3>330</h3><p>Students</p></div>
+            <div class="stat-card"><h3>09</h3><p>Total Staff</p></div>
+            <div class="stat-card"><h3>416040489</h3><p>SEMIS ID</p></div>
+        </div>
+
+        <div class="section">
+            <h2>About Our School</h2>
+            <p>Government Boys Elementary Lower Secondary School (GBELS) Wassan is dedicated to delivering quality education and fostering character development. We strive to create a bright future for every student in our community.</p>
+        </div>
+
+        <div class="section">
+            <h2>School Administration & Faculty</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teacher Name</th>
+                            <th>Designation</th>
+                            <th>Qualification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="head-master-row">
+                            <td>Sarfaraz Ali Wassan s/o Roshan Ali</td>
+                            <td>Head Master (PST)</td>
+                            <td>M.A</td>
+                        </tr>
+                        <tr><td>Muneer Ahmed s/o Ghulam Rasool</td><td>PST (BPS-14)</td><td>B.A</td></tr>
+                        <tr><td>Tofique Ahmed s/o Bashir Ahmed</td><td>PST (BPS-14)</td><td>B.Sc</td></tr>
+                        <tr><td>Aftab Ahmed Moro</td><td>PST (BPS-09)</td><td>M.A</td></tr>
+                        <tr><td>Ali Sher Wassan</td><td>PST (BPS-09)</td><td>B.A / PTC</td></tr>
+                        <tr><td>Iftikhar Ahmed Moro</td><td>PST (BPS-09)</td><td>M.A</td></tr>
+                        <tr><td>Mahdi Koso s/o Ali Nawaz</td><td>PST (BPS-09)</td><td>M.A</td></tr>
+                        <tr><td>Nek Muhammad s/o Noor Muhammad</td><td>PST (BPS-09)</td><td>M.A</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
-        <div class="card">
-            <h2 class="sindhi">اھم ويب سائيٽون (Quick Links)</h2>
-            <div class="links-container">
-                <a href="https://seld.gos.pk/" target="_blank" class="quick-link">Sindh Education <i class="fas fa-external-link-alt"></i></a>
-                <a href="https://steda.gos.pk/" target="_blank" class="quick-link">STEDA Portal <i class="fas fa-graduation-cap"></i></a>
-                <a href="https://maps.google.com/maps/contrib/104420425901589113851" target="_blank" class="quick-link">اسڪول ميپ <i class="fas fa-map-marker-alt"></i></a>
-                <a href="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/" target="_blank" class="quick-link">Portal Home <i class="fas fa-home"></i></a>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2 class="sindhi" style="text-align: center;">اسڪول اسٽاف (Staff)</h2>
-            <p style="direction: rtl; font-family: 'Lateef'; font-size: 1.4rem;">اسڪول ۾ ڪل 8 استاد ۽ 1 چوڪيدار خدمت سرانجام ڏئي رهيا آهن.</p>
+        <div class="section contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>📍 Address:</strong> Wassan, District Naushahro Feroze, Sindh, Pakistan</p>
+            <p><strong>📞 Phone:</strong> <a href="tel:+923008909756" style="color: var(--secondary-color); text-decoration: none; font-weight: bold;">+92 300 8909756</a></p>
+            
+            <a href="https://wa.me/923008909756" class="whatsapp-btn" target="_blank">
+                Message on WhatsApp
+            </a>
         </div>
     </div>
 
-    <a href="https://wa.me/923013875347" class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <footer style="padding-bottom: 20px; color: #64748b; font-size: 0.9rem;">
-        © 2026 GBELS Wassan | Official Website
+    <footer>
+        <p>&copy; 2026 GBELS Wassan. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Created with Excellence by gbelswassan-cyber</p>
     </footer>
 
 </body>
