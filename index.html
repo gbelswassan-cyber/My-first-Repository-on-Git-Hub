@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Govt Boys Elementary Lower Secondary School Wassan</title>
+    <title>Govt Boys Elementary Lower Secondary School Wassan | Official Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #002d5b; --secondary: #ffcc00; --bg: #f4f7f9; --accent: #e74c3c; }
@@ -14,52 +14,67 @@
             background-size: cover; background-position: center; color: white; padding: 60px 20px; text-align: center; border-bottom: 8px solid var(--secondary);
         }
         
-        .school-logo { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--secondary); background: white; object-fit: contain; margin-bottom: 10px; }
+        .school-logo { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--secondary); background: white; object-fit: contain; }
         
-        /* Navbar Layout Updated */
-        nav { background: var(--primary); padding: 10px 20px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--secondary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .news-ticker { background: var(--accent); color: white; padding: 10px 0; font-weight: bold; overflow: hidden; border-bottom: 2px solid white; }
+
+        nav { background: var(--primary); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--secondary); display: flex; justify-content: space-between; align-items: center; }
         
-        .nav-right { display: flex; align-items: center; }
-        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; align-items: center; }
-        .nav-links li { margin: 0 10px; }
-        .nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.3s; }
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-links li { margin: 0 15px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--secondary); }
 
-        /* Admission & Result Buttons in Nav */
-        .nav-btns { display: flex; gap: 8px; margin-right: 15px; }
-        .nav-btn { background: var(--accent); color: white; padding: 6px 15px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 0.8rem; border: 1px solid white; transition: 0.3s; }
-        .nav-btn:hover { background: white; color: var(--accent); }
+        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .hamburger div { width: 25px; height: 3px; background-color: white; border-radius: 2px; }
 
-        .brand-name { color: white; font-weight: bold; font-size: 1rem; }
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links { 
+                display: none; position: absolute; top: 100%; right: 0; width: 100%; 
+                background: var(--primary); flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 15px 0; }
+        }
+
+        .notification-bell {
+            position: fixed; bottom: 20px; left: 20px; background: var(--accent);
+            color: white; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer; z-index: 9999; animation: ring 2s infinite;
+        }
 
         .container { max-width: 1100px; margin: -50px auto 50px; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; }
         .section-title { text-align: center; color: var(--primary); margin-top: 50px; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
         .section-title::after { content: ''; width: 60px; height: 4px; background: var(--secondary); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        .mission-box { border: 1px solid #ddd; border-radius: 15px; padding: 25px; line-height: 2; border-right: 8px solid var(--primary); background: #fdfdfd; }
+        .mission-box { background: #f0f4f8; border-right: 5px solid var(--primary); padding: 25px; border-radius: 0 15px 15px 0; line-height: 2; margin-bottom: 20px; }
 
         .table-container { overflow-x: auto; direction: ltr; text-align: left; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th { background: var(--primary); color: white; padding: 15px; }
-        td { padding: 12px; border-bottom: 1px solid #eee; }
-        .badge { background: #eef2f7; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; border: 1px solid var(--primary); }
+        table { width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 18px; }
+        td { padding: 15px; border-bottom: 1px solid #eee; }
+        .badge { background: #eef2f7; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid var(--primary); }
 
-        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 20px; }
-        .link-card { background: #ebf2f9; padding: 15px; text-align: center; text-decoration: none; color: #002d5b; font-weight: bold; border-radius: 8px; border: 1px solid #d0deeb; font-size: 0.85rem; }
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .link-card { background: #f0f4f8; padding: 15px; border-radius: 10px; text-align: center; text-decoration: none; color: var(--primary); font-weight: bold; border: 1px solid #ddd; transition: 0.3s; }
+        .link-card:hover { background: var(--primary); color: white; }
 
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
-        .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 2px solid #ddd; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.4s; }
+
+        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 2000; }
+        #overlayImg { max-width: 90%; max-height: 80%; border: 3px solid white; }
 
         footer { background: #111; color: white; padding: 40px 20px; text-align: center; direction: ltr; }
-
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 10px; text-align: center; }
-            .nav-links { flex-wrap: wrap; justify-content: center; }
-            .nav-btns { margin-right: 0; margin-top: 5px; }
-        }
+        footer a { color: var(--secondary); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
+
+<div class="notification-bell" onclick="location.href='https://forms.google.com'">🔔</div>
 
 <header>
     <img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/logo.png.png" alt="Logo" class="school-logo">
@@ -67,20 +82,24 @@
     <p>Established 1956 | Official Web Portal</p>
 </header>
 
+<div class="news-ticker">
+    <marquee behavior="scroll" direction="right">
+        📣 تازو اعلان: سال 2026 لاءِ ڪلاس پهرين کان اٺين تائين داخلا شروع ٿي چڪي آهي. | 📚 اسڪول جي نئين ويب پورٽل جو افتتاح ڪيو ويو آهي.
+    </marquee>
+</div>
+
 <nav>
-    <div class="nav-right">
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#faculty">Faculty</a></li>
-            <li><a href="#links">Links</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-        </ul>
-        <div class="nav-btns">
-            <a href="https://forms.google.com" target="_blank" class="nav-btn">Admission</a>
-            <a href="#" class="nav-btn">Result</a>
-        </div>
+    <div style="color: white; font-weight: bold; font-size: 1.2rem;">GBELS WASSAN</div>
+    <div class="hamburger" id="mobile-menu">
+        <div></div><div></div><div></div>
     </div>
-    <div class="brand-name">GBELS WASSAN Naushahro Feroze</div>
+    <ul class="nav-links" id="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#staff">Faculty</a></li>
+        <li><a href="#links">Links</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="https://forms.google.com" target="_blank">Admission</a></li>
+    </ul>
 </nav>
 
 <div class="container">
@@ -93,7 +112,7 @@
         </div>
     </section>
 
-    <h2 id="faculty" class="section-title">Official Faculty List</h2>
+    <h2 id="staff" class="section-title">Official Faculty List</h2>
     <div class="table-container">
         <table>
             <thead>
@@ -108,34 +127,49 @@
                 <tr><td><strong>Iftikhar Ahmed</strong></td><td>10829825</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
                 <tr><td><strong>Mehdi Khoso</strong></td><td>10718934</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
                 <tr><td><strong>Nek Muhammad</strong></td><td>10718971</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
-                <tr><td><strong>Mushtaque Ahmed</strong></td><td>10713543</td><td><span class="badge" style="color:red; border-color:red;">CHOWKIDAR</span></td><td>Primary</td></tr>
+                <tr><td><strong>Mushtaque Ahmed</strong></td><td>10713543</td><td><span class="badge" style="color:red;">CHOWKIDAR</span></td><td>Primary</td></tr>
             </tbody>
         </table>
     </div>
 
     <h2 id="links" class="section-title">Important Educational Links</h2>
     <div class="links-grid">
-        <a href="https://rsu-sindh.gov.pk/" target="_blank" class="link-card">RSU Sindh</a>
-        <a href="https://www.stbb.edu.pk/" target="_blank" class="link-card">Sindh Text Book Board</a>
+        <a href="https://steda.gos.pk/" target="_blank" class="link-card">STEDA Official</a>
         <a href="https://e.sindheducation.gov.pk/" target="_blank" class="link-card">E-Transfer (Seld Sindh)</a>
         <a href="https://sindheducation.gov.pk/" target="_blank" class="link-card">Sindh Education & Literacy Dept</a>
-        <a href="https://steda.gos.pk/" target="_blank" class="link-card">STEDA Official</a>
+        <a href="https://www.stbb.edu.pk/" target="_blank" class="link-card">Sindh Text Book Board</a>
+        <a href="https://rsu-sindh.gov.pk/" target="_blank" class="link-card">RSU Sindh</a>
     </div>
 
     <h2 id="gallery" class="section-title">School Gallery</h2>
     <div class="gallery-grid">
-        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%202.png"></div>
-        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%203.png"></div>
-        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%204.png"></div>
-        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/ajrak1.jpg"></div>
-        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/ajrak2.jpg"></div>
+        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%202.png" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%203.png" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%204.png" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/ajrak1.jpg" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/ajrak2.jpg" onclick="zoomImg(this.src)"></div>
     </div>
+</div>
+
+<div id="overlay" onclick="this.style.display='none'">
+    <img id="overlayImg" src="">
 </div>
 
 <footer>
     <p>Village Muhammad Sharif Wassan, Naushahro Feroze</p>
-    <p>© 2026 GBELS WASSAN | Official Web Portal</p>
+    <p>WhatsApp: <a href="https://wa.me/923008909756" target="_blank">+923008909756</a> | Email: <a href="mailto:gbelswassan@gmail.com">gbelswassan@gmail.com</a></p>
+    <p>© 2026 Govt Boys Elementary Lower Secondary School Wassan | Official Web Portal</p>
 </footer>
 
+<script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+    mobileMenu.addEventListener('click', () => { navList.classList.toggle('active'); });
+
+    function zoomImg(src) {
+        document.getElementById('overlayImg').src = src;
+        document.getElementById('overlay').style.display = 'flex';
+    }
+</script>
 </body>
 </html>
