@@ -4,64 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Govt Boys Elementary Lower Secondary School Wassan | Official Portal</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --primary: #002d5b; --secondary: #ffcc00; --bg: #f4f7f9; --accent: #e74c3c; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: #333; direction: rtl; text-align: right; }
+        :root { --primary: #002d5b; --secondary: #ffcc00; --bg: #f4f7f9; --accent: #e74c3c; --success: #25d366; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: #333; direction: rtl; text-align: right; overflow-x: hidden; }
         
         header { 
-            background: linear-gradient(rgba(0,45,91,0.85), rgba(0,45,91,0.85)), url('https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%202.png');
+            background: linear-gradient(rgba(0,45,91,0.8), rgba(0,45,91,0.8)), url('https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%202.png');
             background-size: cover; background-position: center; color: white; padding: 60px 20px; text-align: center; border-bottom: 8px solid var(--secondary);
         }
         
-        .school-logo { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--secondary); background: white; object-fit: contain; }
-        .news-ticker { background: var(--accent); color: white; padding: 10px 0; font-weight: bold; overflow: hidden; border-bottom: 2px solid white; }
-        nav { background: var(--primary); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--secondary); display: flex; justify-content: space-between; align-items: center; }
+        .school-logo { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--secondary); background: white; object-fit: contain; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .news-ticker { background: var(--accent); color: white; padding: 12px 0; font-weight: bold; border-bottom: 2px solid white; }
+
+        nav { background: var(--primary); padding: 15px 25px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--secondary); display: flex; justify-content: space-between; align-items: center; }
         .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
         .nav-links li { margin: 0 15px; }
-        .nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--secondary); }
 
-        .container { max-width: 1100px; margin: -50px auto 50px; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; }
-        .section-title { text-align: center; color: var(--primary); margin-top: 50px; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
-        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--secondary); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .container { max-width: 1100px; margin: -40px auto 50px; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .section-title { text-align: center; color: var(--primary); margin-bottom: 30px; position: relative; padding-bottom: 10px; font-size: 1.8rem; }
+        .section-title::after { content: ''; width: 50px; height: 4px; background: var(--secondary); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        .mission-container { display: flex; gap: 20px; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; }
-        .mission-box { flex: 1; min-width: 300px; background: #f0f4f8; border-right: 5px solid var(--primary); padding: 25px; border-radius: 0 15px 15px 0; line-height: 2; }
-        .mission-image { width: 45%; min-width: 300px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 3px solid #eee; }
+        /* Mission Section */
+        .mission-container { display: flex; gap: 25px; align-items: center; flex-wrap: wrap; margin-bottom: 50px; }
+        .mission-box { flex: 1; min-width: 300px; background: #f8fafc; padding: 30px; border-radius: 15px; border-right: 6px solid var(--primary); box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
+        .mission-box p { font-size: 1.1rem; line-height: 1.8; margin: 10px 0; }
+        .mission-image { width: 45%; min-width: 300px; border-radius: 15px; border: 4px solid #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-        .table-container { overflow-x: auto; direction: ltr; text-align: left; }
-        table { width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden; }
-        th { background: var(--primary); color: white; padding: 18px; }
-        td { padding: 15px; border-bottom: 1px solid #eee; }
-        .badge { background: #eef2f7; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid var(--primary); }
+        /* Faculty Table */
+        .table-container { overflow-x: auto; direction: ltr; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        th { background: var(--primary); color: white; padding: 20px; text-align: left; font-size: 1rem; }
+        td { padding: 15px; border-bottom: 1px solid #eee; text-align: left; }
+        .badge { background: #eef2f7; color: var(--primary); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid var(--primary); }
 
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-        .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.4s; border: 2px solid #eee; }
+        /* Gallery Zoom Effect */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .gallery-item { overflow: hidden; border-radius: 15px; border: 3px solid #eee; transition: 0.3s; }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; cursor: pointer; transition: 0.4s; display: block; }
+        .gallery-item:hover { border-color: var(--secondary); transform: translateY(-5s px); }
+        .gallery-item:hover img { transform: scale(1.1); }
 
+        /* Footer WhatsApp Fix */
+        footer { background: #111; color: white; padding: 50px 20px; text-align: center; border-top: 5px solid var(--primary); }
+        .whatsapp-btn {
+            display: inline-flex; align-items: center; background: var(--success); color: white !important; 
+            padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; 
+            margin: 15px 0; transition: 0.3s; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        .whatsapp-btn:hover { background: #1ebd5a; transform: scale(1.05); }
+        .whatsapp-btn i { margin-left: 10px; font-size: 1.3rem; }
+
+        /* Zoom Overlay */
         #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 2000; }
-        #overlayImg { max-width: 90%; max-height: 80%; border: 3px solid white; border-radius: 10px; }
-        footer { background: #111; color: white; padding: 40px 20px; text-align: center; direction: ltr; border-top: 5px solid var(--primary); margin-top: 50px; }
+        #overlayImg { max-width: 90%; max-height: 85%; border: 4px solid white; border-radius: 10px; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/logo.png.png" alt="Logo" class="school-logo">
-    <h1>Govt Boys Elementary Lower Secondary School Wassan</h1>
-    <p>Established 1956 | Official Portal</p>
+    <img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/logo.png.png" alt="School Logo" class="school-logo">
+    <h1 style="margin: 20px 0 10px;">Govt Boys Elementary Lower Secondary School Wassan</h1>
+    <p style="font-size: 1.2rem; opacity: 0.9;">Established 1956 | Shaping Futures Since Decades</p>
 </header>
 
 <div class="news-ticker">
-    <marquee behavior="scroll" direction="right">📣 تازو اعلان: سال 2026 لاءِ ڪلاس پهرين کان اٺين تائين داخلا شروع ٿي چڪي آهي.</marquee>
+    <marquee behavior="scroll" direction="right" scrollamount="8">
+        📢 تازو اعلان: سال 2026 لاءِ ڪلاس پهرين کان اٺين تائين داخلا شروع ٿي چڪي آهي. | 🏫 اسڪول جي نئين ويب سائيٽ هاڻي فعال آهي.
+    </marquee>
 </div>
 
 <nav>
-    <div style="color: white; font-weight: bold;">GBELS WASSAN</div>
+    <div style="color: white; font-weight: bold; font-size: 1.2rem;">GBELS WASSAN</div>
     <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#staff">Faculty</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">مقصد</a></li>
+        <li><a href="#staff">استاد</a></li>
+        <li><a href="#gallery">گيلري</a></li>
     </ul>
 </nav>
 
@@ -70,11 +93,11 @@
         <h2 class="section-title">اسان جا مقصد (Our Mission)</h2>
         <div class="mission-container">
             <div class="mission-box">
-                <p>✅ شاگردن ۾ اخلاقي، علمي ۽ ذهني صلاحيتون پيدا ڪرڻ۔</p>
-                <p>✅ علائقي جي ٻارن کي جديد دور جي چئلينجز لاءِ تيار ڪرڻ۔</p>
-                <p>✅ تعليم سان گڏوگڏ راندين ۽ ٻين سرگرمين کي هٿي ڏيڻ۔</p>
+                <p><i class="fas fa-check-circle" style="color:var(--success);"></i> شاگردن ۾ اخلاقي ۽ علمي صلاحيتون پيدا ڪرڻ۔</p>
+                <p><i class="fas fa-check-circle" style="color:var(--success);"></i> جديد دور جي چئلينجز لاءِ تيار ڪرڻ۔</p>
+                <p><i class="fas fa-check-circle" style="color:var(--success);"></i> تعليم سان گڏ راندين کي هٿي ڏيڻ۔</p>
             </div>
-            <img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%202.png" alt="School View" class="mission-image">
+            <img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%202.png" alt="Mission Image" class="mission-image">
         </div>
     </section>
 
@@ -82,7 +105,7 @@
     <div class="table-container">
         <table>
             <thead>
-                <tr><th>Name of Employee</th><th>P.ID</th><th>Designation</th><th>Qualification</th></tr>
+                <tr><th>Name of Employee</th><th>Personal ID</th><th>Designation</th><th>Qualification</th></tr>
             </thead>
             <tbody>
                 <tr><td><strong>Sarfaraz Ali Wassan</strong></td><td>10718953</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Phil</td></tr>
@@ -93,7 +116,7 @@
                 <tr><td><strong>Iftikhar Ahmed</strong></td><td>10829825</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
                 <tr><td><strong>Mehdi Khoso</strong></td><td>10718934</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
                 <tr><td><strong>Nek Muhammad</strong></td><td>10718971</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
-                <tr><td><strong>Mushtaque Ahmed</strong></td><td>10713543</td><td><span class="badge" style="color:red;">CHOWKIDAR</span></td><td>Primary</td></tr>
+                <tr><td><strong>Mushtaque Ahmed</strong></td><td>10713543</td><td><span class="badge" style="color:red; border-color:red;">CHOWKIDAR</span></td><td>Primary</td></tr>
             </tbody>
         </table>
     </div>
@@ -114,9 +137,13 @@
 </div>
 
 <footer>
-    <p>Village Muhammad Sharif Wassan, Naushahro Feroze</p>
-    <p>WhatsApp: +923008909756</p>
-    <p>© 2026 GBELS Wassan | Master Copy</p>
+    <p><i class="fas fa-map-marker-alt" style="color:var(--secondary);"></i> Village Muhammad Sharif Wassan, Naushahro Feroze</p>
+    
+    <a href="https://wa.me/923008909756" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp Contact
+    </a>
+    
+    <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 20px;">© 2026 GBELS Wassan | <strong>Master Copy</strong></p>
 </footer>
 
 <script>
