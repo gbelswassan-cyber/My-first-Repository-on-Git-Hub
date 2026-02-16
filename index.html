@@ -3,51 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Govt Boys Elementary Lower Secondary School Wassan | Official Portal</title>
+    <title>Govt Boys Elementary Lower Secondary School Wassan | Master Copy</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #002d5b; --secondary: #ffcc00; --bg: #f4f7f9; --accent: #e74c3c; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: #333; direction: rtl; text-align: right; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: #333; direction: rtl; text-align: right; -webkit-font-smoothing: antialiased; }
         
+        /* Header سان گڏ صحيح بيڪ گرائونڊ تصوير */
         header { 
             background: linear-gradient(rgba(0,45,91,0.85), rgba(0,45,91,0.85)), url('https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%202.png');
             background-size: cover; background-position: center; color: white; padding: 60px 20px; text-align: center; border-bottom: 8px solid var(--secondary);
         }
         
         .school-logo { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--secondary); background: white; object-fit: contain; }
-        
         .news-ticker { background: var(--accent); color: white; padding: 10px 0; font-weight: bold; overflow: hidden; border-bottom: 2px solid white; }
-
         nav { background: var(--primary); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--secondary); display: flex; justify-content: space-between; align-items: center; }
-        
         .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
         .nav-links li { margin: 0 15px; }
         .nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--secondary); }
-
+        
         .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
         .hamburger div { width: 25px; height: 3px; background-color: white; border-radius: 2px; }
 
         @media (max-width: 768px) {
             .hamburger { display: flex; }
-            .nav-links { 
-                display: none; position: absolute; top: 100%; right: 0; width: 100%; 
-                background: var(--primary); flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-            }
+            .nav-links { display: none; position: absolute; top: 100%; right: 0; width: 100%; background: var(--primary); flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
             .nav-links.active { display: flex; }
-            .nav-links li { margin: 15px 0; }
             .mission-container { flex-direction: column !important; }
             .mission-image { width: 100% !important; margin-top: 15px; }
         }
-
-        .notification-bell {
-            position: fixed; bottom: 20px; left: 20px; background: var(--accent);
-            color: white; width: 60px; height: 60px; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            cursor: pointer; z-index: 9999; animation: ring 2s infinite;
-        }
-        @keyframes ring { 0% { transform: rotate(0); } 10% { transform: rotate(15deg); } 20% { transform: rotate(-15deg); } 100% { transform: rotate(0); } }
 
         .container { max-width: 1100px; margin: -50px auto 50px; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; }
         .section-title { text-align: center; color: var(--primary); margin-top: 50px; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
@@ -55,7 +40,7 @@
 
         .mission-container { display: flex; gap: 20px; align-items: center; justify-content: space-between; margin-bottom: 20px; }
         .mission-box { flex: 1; background: #f0f4f8; border-right: 5px solid var(--primary); padding: 25px; border-radius: 0 15px 15px 0; line-height: 2; }
-        .mission-image { width: 45%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 3px solid #eee; object-fit: cover; }
+        .mission-image { width: 45%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 3px solid #eee; }
 
         .table-container { overflow-x: auto; direction: ltr; text-align: left; }
         table { width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden; }
@@ -68,23 +53,22 @@
         .link-card:hover { background: var(--primary); color: white; }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-        .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.4s; }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.4s; border: 2px solid #eee; }
+        .gallery-item img:hover { transform: scale(1.05); }
 
         #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 2000; }
-        #overlayImg { max-width: 90%; max-height: 80%; border: 3px solid white; }
-
-        footer { background: #111; color: white; padding: 40px 20px; text-align: center; direction: ltr; }
+        #overlayImg { max-width: 90%; max-height: 80%; border: 3px solid white; border-radius: 10px; }
+        
+        footer { background: #111; color: white; padding: 40px 20px; text-align: center; direction: ltr; margin-top: 50px; border-top: 5px solid var(--primary); }
         footer a { color: var(--secondary); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="notification-bell" onclick="window.open('https://forms.google.com', '_blank')">🔔</div>
-
 <header>
     <img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/logo.png.png" alt="Logo" class="school-logo">
     <h1>Govt Boys Elementary Lower Secondary School Wassan</h1>
-    <p>Established 1956 | Official Web Portal</p>
+    <p>Established 1956 | Quality Education Portal</p>
 </header>
 
 <div class="news-ticker">
@@ -103,8 +87,7 @@
         <li><a href="#staff">Faculty</a></li>
         <li><a href="#links">Links</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#result">Result</a></li> 
-        <li><a href="https://forms.google.com" target="_blank" style="background:var(--secondary); color:var(--primary); padding:5px 10px; border-radius:5px;">Admission</a></li>
+        <li><a href="https://forms.google.com" target="_blank">Admission</a></li>
     </ul>
 </nav>
 
@@ -136,7 +119,7 @@
                 <tr><td><strong>Iftikhar Ahmed</strong></td><td>10829825</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
                 <tr><td><strong>Mehdi Khoso</strong></td><td>10718934</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
                 <tr><td><strong>Nek Muhammad</strong></td><td>10718971</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
-                <tr><td><strong>Mushtaque Ahmed</strong></td><td>10713543</td><td><span class="badge" style="color:red;">CHOWKIDAR</span></td><td>Primary</td></tr>
+                <tr><td><strong>Mushtaque Ahmed</strong></td><td>10713543</td><td><span class="badge" style="color:red; border-color:red;">CHOWKIDAR</span></td><td>Primary</td></tr>
             </tbody>
         </table>
     </div>
@@ -147,8 +130,6 @@
         <a href="https://apply.sts.net.pk/" target="_blank" class="link-card">STS IBA (Apply)</a>
         <a href="https://eportal.sindheducation.gov.pk/" target="_blank" class="link-card">E-Transfer Portal</a>
         <a href="https://sindheducation.gov.pk/" target="_blank" class="link-card">SELD Sindh</a>
-        <a href="https://steda.gos.pk/" target="_blank" class="link-card">STEDA Official</a>
-        <a href="https://www.stbb.edu.pk/" target="_blank" class="link-card">Sindh Text Book Board</a>
     </div>
 
     <h2 id="gallery" class="section-title">School Gallery</h2>
@@ -168,15 +149,17 @@
 
 <footer>
     <p>Village Muhammad Sharif Wassan, Naushahro Feroze</p>
-    <p>WhatsApp: <a href="https://wa.me/923008909756" target="_blank">+923008909756</a> | Email: gbelswassan@gmail.com</p>
-    <p>© 2026 Govt Boys Elementary Lower Secondary School Wassan</p>
+    <p>WhatsApp: <a href="https://wa.me/923008909756" target="_blank">+923008909756</a></p>
+    <p>© 2026 GBELS Wassan | <strong>Master Copy</strong></p>
 </footer>
 
 <script>
+    // موبائيل مينيو ڪنٽرول
     const mobileMenu = document.getElementById('mobile-menu');
     const navList = document.getElementById('nav-list');
     mobileMenu.addEventListener('click', () => { navList.classList.toggle('active'); });
 
+    // تصوير زوم ڪرڻ
     function zoomImg(src) {
         document.getElementById('overlayImg').src = src;
         document.getElementById('overlay').style.display = 'flex';
