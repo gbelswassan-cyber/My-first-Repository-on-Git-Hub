@@ -36,6 +36,8 @@
             }
             .nav-links.active { display: flex; }
             .nav-links li { margin: 15px 0; }
+            .mission-container { flex-direction: column !important; }
+            .mission-image { width: 100% !important; margin-top: 15px; }
         }
 
         .notification-bell {
@@ -45,12 +47,15 @@
             font-size: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             cursor: pointer; z-index: 9999; animation: ring 2s infinite;
         }
+        @keyframes ring { 0% { transform: rotate(0); } 10% { transform: rotate(15deg); } 20% { transform: rotate(-15deg); } 100% { transform: rotate(0); } }
 
         .container { max-width: 1100px; margin: -50px auto 50px; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; }
         .section-title { text-align: center; color: var(--primary); margin-top: 50px; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
         .section-title::after { content: ''; width: 60px; height: 4px; background: var(--secondary); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        .mission-box { background: #f0f4f8; border-right: 5px solid var(--primary); padding: 25px; border-radius: 0 15px 15px 0; line-height: 2; margin-bottom: 20px; }
+        .mission-container { display: flex; gap: 20px; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+        .mission-box { flex: 1; background: #f0f4f8; border-right: 5px solid var(--primary); padding: 25px; border-radius: 0 15px 15px 0; line-height: 2; }
+        .mission-image { width: 45%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 3px solid #eee; object-fit: cover; }
 
         .table-container { overflow-x: auto; direction: ltr; text-align: left; }
         table { width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden; }
@@ -74,7 +79,7 @@
 </head>
 <body>
 
-<div class="notification-bell" onclick="location.href='https://forms.google.com'">🔔</div>
+<div class="notification-bell" onclick="window.open('https://forms.google.com', '_blank')">🔔</div>
 
 <header>
     <img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/logo.png.png" alt="Logo" class="school-logo">
@@ -98,17 +103,21 @@
         <li><a href="#staff">Faculty</a></li>
         <li><a href="#links">Links</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#result">Result</a></li> <li><a href="https://forms.google.com" target="_blank">Admission</a></li>
+        <li><a href="#result">Result</a></li> 
+        <li><a href="https://forms.google.com" target="_blank" style="background:var(--secondary); color:var(--primary); padding:5px 10px; border-radius:5px;">Admission</a></li>
     </ul>
 </nav>
 
 <div class="container">
     <section id="about">
         <h2 class="section-title">اسان جا مقصد (Our Mission)</h2>
-        <div class="mission-box">
-            <p>✅ شاگردن ۾ اخلاقي، علمي ۽ ذهني صلاحيتون پيدا ڪرڻ۔</p>
-            <p>✅ علائقي جي ٻارن کي جديد دور جي چئلينجز لاءِ تيار ڪرڻ۔</p>
-            <p>✅ تعليم سان گڏوگڏ راندين ۽ ٻين سرگرمين کي هٿي ڏيڻ۔</p>
+        <div class="mission-container">
+            <div class="mission-box">
+                <p>✅ شاگردن ۾ اخلاقي، علمي ۽ ذهني صلاحيتون پيدا ڪرڻ۔</p>
+                <p>✅ علائقي جي ٻارن کي جديد دور جي چئلينجز لاءِ تيار ڪرڻ۔</p>
+                <p>✅ تعليم سان گڏوگڏ راندين ۽ ٻين سرگرمين کي هٿي ڏيڻ۔</p>
+            </div>
+            <img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/School_view.jpg" alt="School View" class="mission-image">
         </div>
     </section>
 
@@ -142,16 +151,9 @@
         <a href="https://www.stbb.edu.pk/" target="_blank" class="link-card">Sindh Text Book Board</a>
     </div>
 
-    <section id="result">
-        <h2 class="section-title">Examination Results</h2>
-        <div class="mission-box" style="text-align: center;">
-            <p>⌛ سالياني امتحانن جا نتيجا جلد هتي اپڊيٽ ڪيا ويندا۔</p>
-        </div>
-    </section>
-
     <h2 id="gallery" class="section-title">School Gallery</h2>
     <div class="gallery-grid">
-        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/bags01.jpg.png" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/Ajrak05.jpg.png" onclick="zoomImg(this.src)"></div>
         <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/Ajrak 02.jpg.png" onclick="zoomImg(this.src)"></div>
         <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/Ajrak03.jpg.png" onclick="zoomImg(this.src)"></div>
         <div class="gallery-item"><img src="https://gbelswassan-cyber.github.io/My-first-Repository-on-Git-Hub/img%202.png" onclick="zoomImg(this.src)"></div>
@@ -166,8 +168,8 @@
 
 <footer>
     <p>Village Muhammad Sharif Wassan, Naushahro Feroze</p>
-    <p>WhatsApp: <a href="https://wa.me/923008909756" target="_blank">+923008909756</a> | Email: <a href="mailto:gbelswassan@gmail.com">gbelswassan@gmail.com</a></p>
-    <p>© 2026 Govt Boys Elementary Lower Secondary School Wassan | Official Web Portal</p>
+    <p>WhatsApp: <a href="https://wa.me/923008909756" target="_blank">+923008909756</a> | Email: gbelswassan@gmail.com</p>
+    <p>© 2026 Govt Boys Elementary Lower Secondary School Wassan</p>
 </footer>
 
 <script>
