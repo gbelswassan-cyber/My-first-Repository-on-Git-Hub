@@ -1,84 +1,217 @@
 <!DOCTYPE html>
-<html lang="sd" dir="rtl">
+<html lang="sd">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GBELS Wassan | آفيشل ويب سائيٽ</title>
+    <meta name="google-site-verification" content="cLGrBw34bJuSt0ts047IZ32uP57Ti6_TikbvE2ubUUA" />
+    
+    <title>Govt Boys Elementary Lower Secondary School Wassan | Official Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #004d40; --secondary: #ffc107; --bg: #f4f7f6; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background-color: var(--bg); text-align: center; color: #333; }
-        header { background: var(--primary); color: white; padding: 40px; border-bottom: 8px solid var(--secondary); }
-        nav { background: #242526; padding: 10px; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; text-decoration: none; padding: 10px 15px; font-weight: bold; }
-
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        :root { --primary: #002d5b; --secondary: #ffcc00; --bg: #f4f7f9; --accent: #e74c3c; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: #333; direction: rtl; text-align: right; }
         
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-        .gallery img { width: 100%; border-radius: 10px; border: 3px solid #ddd; height: 200px; object-fit: cover; }
-
-        .btn { display: inline-block; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px; transition: 0.3s; }
-        .btn-wa { background: #25d366; color: white; }
-        .btn-map { background: var(--primary); color: white; }
-
-        input { padding: 12px; border-radius: 5px; border: 1px solid #ccc; width: 60%; margin-bottom: 10px; }
-        button { padding: 12px 25px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer; }
+        header { 
+            background: linear-gradient(rgba(0,45,91,0.85), rgba(0,45,91,0.85)), url('img 2.png');
+            background-size: cover; background-position: center; color: white; padding: 60px 20px; text-align: center; border-bottom: 8px solid var(--secondary);
+        }
         
-        footer { background: #1c1e21; color: white; padding: 30px; margin-top: 50px; }
+        .school-logo { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--secondary); background: white; object-fit: contain; }
+        
+        .news-ticker { background: var(--accent); color: white; padding: 10px 0; font-weight: bold; overflow: hidden; border-bottom: 2px solid white; }
+
+        nav { background: var(--primary); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--secondary); display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; align-items: center; }
+        .nav-links li { margin: 0 15px; position: relative; }
+        .nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; cursor: pointer; }
+        .nav-links a:hover { color: var(--secondary); }
+
+        .dropdown-content { display: none; position: absolute; top: 100%; right: 0; background-color: white; min-width: 160px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; border-radius: 5px; margin-top: 10px; }
+        .dropdown-content a { color: #333 !important; padding: 12px 16px; display: block; font-size: 0.85rem; border-bottom: 1px solid #eee; text-align: right; }
+        .dropdown-content a:hover { background-color: #f1f1f1; color: var(--primary) !important; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .hamburger div { width: 25px; height: 3px; background-color: white; border-radius: 2px; }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links { display: none; position: absolute; top: 100%; right: 0; width: 100%; background: var(--primary); flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 15px 0; width: 100%; }
+            .dropdown-content { position: static; width: 100%; box-shadow: none; background: #003a75; }
+            .dropdown-content a { color: white !important; text-align: center; }
+        }
+
+        .notification-bell {
+            position: fixed; bottom: 20px; left: 20px; background: var(--accent);
+            color: white; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer; z-index: 9999; animation: ring 2s infinite;
+        }
+        @keyframes ring { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+        .container { max-width: 1100px; margin: -50px auto 50px; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; }
+        .section-title { text-align: center; color: var(--primary); margin-top: 50px; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--secondary); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        .mission-container { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+        .mission-box { background: #f0f4f8; border-right: 5px solid var(--primary); padding: 25px; border-radius: 0 15px 15px 0; line-height: 2; flex: 1; min-width: 300px; }
+        .mission-image { width: 300px; max-width: 100%; border-radius: 15px; object-fit: cover; border: 1px solid #ddd; }
+
+        .table-container { overflow-x: auto; direction: ltr; text-align: left; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 18px; }
+        td { padding: 15px; border-bottom: 1px solid #eee; }
+        .badge { background: #eef2f7; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid var(--primary); }
+
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
+        .link-card { background: #f0f4f8; padding: 15px; border-radius: 10px; text-align: center; text-decoration: none; color: var(--primary); font-weight: bold; border: 1px solid #ddd; transition: 0.3s; }
+        .link-card:hover { background: var(--primary); color: white; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.4s; }
+        .gallery-item img:hover { transform: scale(1.05); }
+
+        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 2000; cursor: pointer; }
+        #overlayImg { max-width: 90%; max-height: 80%; border: 3px solid white; border-radius: 5px; }
+
+        footer { background: #111; color: white; padding: 40px 20px; text-align: center; direction: ltr; }
+        footer a { color: var(--secondary); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
+<div class="notification-bell" onclick="window.open('https://forms.gle/JHjrqTRcTzioHAU56', '_blank')">🔔</div>
+
 <header>
-    <h1>گورنمينٽ بوائز ايليمينٽري لوئر سيڪنڊري اسڪول وسڻ</h1>
-    <p>SEMIS ID: 416040489 | ضلعو نوشهرو فيروز</p>
+    <img src="logo.png.png" alt="Logo" class="school-logo">
+    <h1>Govt Boys Elementary Lower Secondary School Wassan</h1>
+    <p>Established 1956 | Official Web Portal</p>
 </header>
 
+<div class="news-ticker">
+    <marquee behavior="scroll" direction="right">
+        📣 تازو اعلان: سال 2026 لاءِ ڪلاس پهرين کان اٺين تائين داخلا شروع ٿي چڪي آهي. | 📚 اسڪول جي نئين ويب پورٽل جو افتتاح ڪيو ويو آهي.
+    </marquee>
+</div>
+
 <nav>
-    <a href="#home">هوم</a>
-    <a href="#gallery">تصويرون</a>
-    <a href="#result">رزلٽ</a>
-    <a href="#contact">رابطو</a>
+    <div style="color: white; font-weight: bold; font-size: 1.2rem;">GBELS WASSAN</div>
+    <div class="hamburger" id="mobile-menu">
+        <div></div><div></div><div></div>
+    </div>
+    <ul class="nav-links" id="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#staff">Faculty</a></li>
+        <li><a href="#links">Links</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#result">Result</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)">Admission ▾</a>
+            <div class="dropdown-content">
+                <a href="https://forms.gle/JHjrqTRcTzioHAU56" target="_blank">1. Online Apply</a>
+                <a href="Master_Copy_Admission_Form.pdf" target="_blank">2. Manual Form (PDF)</a>
+            </div>
+        </li>
+    </ul>
 </nav>
 
 <div class="container">
-    
-    <section id="gallery" class="card">
-        <h2 style="color: var(--primary);">اسڪول جون تصويرون</h2>
-        <div class="gallery">
-            <img src="school1.jpg" alt="اسڪول جي بلڊنگ">
-            <img src="staff.jpg" alt="اسڪول جو اسٽاف">
-            <img src="students.jpg" alt="شاگرد">
+    <section id="about">
+        <h2 class="section-title">اسان جا مقصد (Our Mission)</h2>
+        <div class="mission-container">
+            <div class="mission-box">
+                <p>✅ شاگردن ۾ اخلاقي، علمي ۽ ذهني صلاحيتون پيدا ڪرڻ۔</p>
+                <p>✅ علائقي جي ٻارن کي جديد دور جي چئلينجز لاءِ تيار ڪرڻ۔</p>
+                <p>✅ تعليم سان گڏوگڏ راندين ۽ ٻين سرگرمين کي هٿي ڏيڻ۔</p>
+            </div>
+            <img src="bags01.jpg.png" alt="Mission Image" class="mission-image">
         </div>
     </section>
 
-    <section id="result" class="card">
-        <h2 style="color: var(--primary);">آن لائن رزلٽ 2026</h2>
-        <p>پنھنجو رول نمبر لکو:</p>
-        <input type="text" id="rollNo" placeholder="مثال: 101">
-        <button onclick="checkResult()">رزلٽ چيڪ ڪريو</button>
-        <div id="resultDisplay" style="margin-top: 20px; font-weight: bold; font-size: 1.2em;"></div>
+    <h2 id="staff" class="section-title">Official Faculty List</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr><th>Name of Employee</th><th>P.ID</th><th>Designation</th><th>Qualification</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Sarfaraz Ali Wassan</strong></td><td>10718953</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Phil</td></tr>
+                <tr><td><strong>Ali Sher Wassan</strong></td><td>10381947</td><td><span class="badge">PST (BPS-16)</span></td><td>P.T.C + B.A</td></tr>
+                <tr><td><strong>Aftab Ahmed Mooro</strong></td><td>10718932</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
+                <tr><td><strong>Muneer Ahmed</strong></td><td>11016864</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + B.Ed</td></tr>
+                <tr><td><strong>Toqeer Ahmed</strong></td><td>11116636</td><td><span class="badge">PST (BPS-14)</span></td><td>MSc Mathematics</td></tr>
+                <tr><td><strong>Iftikhar Ahmed</strong></td><td>10829825</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
+                <tr><td><strong>Mehdi Khoso</strong></td><td>10718934</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
+                <tr><td><strong>Nek Muhammad</strong></td><td>10718971</td><td><span class="badge">PST (BPS-14)</span></td><td>M.A + M.Ed</td></tr>
+                <tr><td><strong>Mushtaque Ahmed</strong></td><td>10713543</td><td><span class="badge" style="color:red; border-color:red;">CHOWKIDAR</span></td><td>Primary</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 id="links" class="section-title">Important Educational Links</h2>
+    <div class="links-grid">
+        <a href="https://spsc.gos.pk/" target="_blank" class="link-card">SPSC Official</a>
+        <a href="https://apply.sts.net.pk/" target="_blank" class="link-card">STS IBA (Apply)</a>
+        <a href="https://eportal.sindheducation.gov.pk/" target="_blank" class="link-card">E-Transfer Portal</a>
+        <a href="https://sindheducation.gov.pk/" target="_blank" class="link-card">SELD Sindh</a>
+        <a href="https://steda.gos.pk/" target="_blank" class="link-card">STEDA Official</a>
+        <a href="https://www.stbb.edu.pk/" target="_blank" class="link-card">Sindh Text Book Board</a>
+    </div>
+
+    <section id="result">
+        <h2 class="section-title">Examination Results</h2>
+        <div class="mission-box" style="text-align: center;">
+            <p>⌛ سالياني امتحانن جا نتيجا جلد هتي اپڊيٽ ڪيا ويندا۔</p>
+        </div>
     </section>
 
-    <section id="contact" class="card">
-        <h2 style="color: var(--primary);">رابطو ۽ لوڪيشن</h2>
-        <p>ايميل: gbelswassan@gmail.com</p>
-        <a href="https://wa.me/923013875347" class="btn btn-wa">واٽس اپ تي رابطو ڪريو</a>
-        <br><br>
-        <iframe src="https://maps.google.com/?cid=10159834540914769955&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" width="100%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
-        <a href="https://maps.app.goo.gl/uX8D1yA8V9j5Y2e2A6" target="_blank" class="btn btn-map">گوگل ميپ تي رستو ڏسو</a>
-    </section>
+    <h2 id="gallery" class="section-title">School Gallery</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="bags01.jpg.png" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="Ajrak 02.jpg.png" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="Ajrak03.jpg.png" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="img 2.png" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="img 3.png" onclick="zoomImg(this.src)"></div>
+        <div class="gallery-item"><img src="img 4.png" onclick="zoomImg(this.src)"></div>
+    </div>
+</div>
 
+<div id="overlay" onclick="this.style.display='none'">
+    <img id="overlayImg" src="">
 </div>
 
 <footer>
-    <p>© 2026 GBELS وسڻ | سڀ حق محفوظ آهن</p>
-    <p>ڊولپر: <a href="https://github.com/gbelswassan-cyber" style="color: var(--secondary);">gbelswassan-cyber</a></p>
+    <p>Village Muhammad Sharif Wassan, Naushahro Feroze</p>
+    <p>WhatsApp: <a href="https://wa.me/923008909756" target="_blank">+923008909756</a> | Email: <a href="mailto:gbelswassan@gmail.com">gbelswassan@gmail.com</a></p>
+    <p>© 2026 Govt Boys Elementary Lower Secondary School Wassan | Official Web Portal</p>
 </footer>
 
 <script>
-    function checkResult() {
-        var roll = document.getElementById('rollNo').value;
-        var display = document.getElementById('resultDisplay');
-        
- 
+    // موبائيل ميو لاء اسڪرپٽ
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+    mobileMenu.addEventListener('click', () => { 
+        navList.classList.toggle('active'); 
+    });
+
+    // تصويرن کي زوم ڪرڻ لاء اسڪرپٽ
+    function zoomImg(src) {
+        document.getElementById('overlayImg').src = src;
+        document.getElementById('overlay').style.display = 'flex';
+    }
+    
+    // ميو جي لنڪس تي ڪلڪ ڪرڻ سان ميو بند ٿي وڃي (موبائيل لاء)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(window.innerWidth <= 768) {
+                navList.classList.remove('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
