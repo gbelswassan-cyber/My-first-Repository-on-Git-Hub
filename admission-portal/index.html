@@ -1,170 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sd">
 <head>
     <meta charset="UTF-8">
     <title>Master Copy | GBELS WASSAN Admission Form</title>
     <style>
-        @media print { .no-print { display: none; } body { padding: 0; margin: 0; } .page-border { border: 2px solid #000; width: 100%; height: auto; box-shadow: none; margin: 0; } }
-        :root { --primary: #002d5b; --accent: #8b0000; --gold: #c5a059; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f0f0; padding: 20px; direction: ltr; }
-        .page-border { background: white; width: 210mm; min-height: 297mm; margin: auto; padding: 40px; box-sizing: border-box; position: relative; border: 10px double var(--primary); box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        
-        /* نئين لوگو لاءِ ڪسٽم اسٽائل */
-        .header { display: flex; align-items: center; border-bottom: 4px solid var(--primary); padding-bottom: 10px; margin-bottom: 10px; }
-        
-        .school-logo-full {
-            position: relative;
-            width: 120px; /* فارم جي حساب سان سائيز سيٽ ڪئي وئي آهي */
-            height: 120px;
-            background: #0d1b3e;
-            border: 3px double var(--gold);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-        }
-        .inner-img-full { width: 60px; height: auto; z-index: 2; }
-        .full-text-svg { position: absolute; width: 100%; height: 100%; fill: #ffffff; font-size: 10px; font-weight: bold; }
-        .full-est { position: absolute; bottom: 10px; color: #ffffff; font-size: 7px; font-weight: bold; background: rgba(197, 160, 89, 0.2); padding: 1px 5px; border-radius: 5px; z-index: 3; }
-
-        .school-info { flex: 1; text-align: center; }
-        .school-info h1 { margin: 0; color: var(--primary); font-size: 18px; text-transform: uppercase; font-weight: bold; }
-        .school-info p { margin: 3px 0; font-weight: bold; font-size: 12px; color: #333; }
-        
-        .contact-bar { background: #f2f2f2; padding: 8px; font-size: 11px; display: flex; justify-content: space-around; border-radius: 5px; margin-bottom: 15px; border: 1px solid #ccc; font-weight: bold; }
-        .admission-title { background: var(--primary); color: white; padding: 10px; text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 20px; border-radius: 5px; }
-        .session-info { display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; border: 1px solid #000; padding: 10px; border-radius: 5px; background: #fafafa; font-size: 13px; }
-        .section { margin-bottom: 15px; border: 1px solid #000; padding: 15px 12px 5px 12px; border-radius: 5px; position: relative; }
-        .section-label { position: absolute; top: -11px; left: 15px; background: white; padding: 0 10px; font-weight: bold; color: var(--accent); font-size: 12px; text-transform: uppercase; }
-        .row { display: flex; flex-wrap: wrap; margin-bottom: 10px; }
-        .field { flex: 1; min-width: 180px; display: flex; align-items: flex-end; margin-bottom: 5px; }
-        .field label { font-weight: bold; margin-right: 8px; font-size: 12px; white-space: nowrap; }
-        .field span { border-bottom: 1px dotted #000; flex: 1; height: 16px; margin-right: 10px; }
-        .checkbox-group { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 11px; font-weight: bold; }
-        .check-box { width: 14px; height: 14px; border: 1.5px solid #000; display: inline-block; vertical-align: middle; margin-right: 3px; }
-        .declaration { font-size: 11px; line-height: 1.6; margin-top: 15px; border: 1px dashed #000; padding: 10px; background: #fffdf5; }
-        .footer-sigs { display: flex; justify-content: space-between; margin-top: 35px; text-align: center; }
-        .sig-box { width: 200px; border-top: 1.5px solid #000; padding-top: 5px; font-size: 12px; font-weight: bold; }
-        .office-use { background: #f9f9f9; border: 2px solid var(--primary); margin-top: 20px; padding: 15px; border-radius: 10px; }
-        .photo-box { width: 110px; height: 130px; border: 2px dashed #777; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; position: absolute; right: 45px; top: 130px; background: #fff; }
-        .btn-print { background: var(--primary); color: white; padding: 15px 40px; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; margin-bottom: 20px; }
+        /* هتي اوهان جي فارم جي ڊيزائن وارو ڪوڊ هوندو */
+        body { font-family: 'Poppins', sans-serif; direction: rtl; }
+        .form-container { border: 2px solid #002d5b; padding: 20px; width: 800px; margin: auto; position: relative; }
+        .header-table { width: 100%; border-bottom: 2px solid #002d5b; margin-bottom: 10px; }
+        .logo-img { width: 100px; height: 100px; }
     </style>
 </head>
 <body>
 
-<center class="no-print">
-    <button class="btn-print" onclick="window.print()">Print Master Admission Form 🖨️</button>
-</center>
-
-<div class="page-border">
-    <div class="header">
-        <div class="school-logo-full">
-            <svg viewBox="0 0 200 200" class="full-text-svg">
-                <path id="fullCurve" d="M 40, 100 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="transparent" />
-                <text>
-                    <textPath xlink:href="#fullCurve" startOffset="25%" text-anchor="middle">
-                        GOVT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN
-                    </textPath>
-                </text>
-            </svg>
-            <img src="logo.png" alt="GBELS Logo" class="inner-img-full">
-            <div class="full-est">ESTD 1956</div>
-        </div>
-
-        <div class="school-info">
-            <h1>Government Boys Elementary Lower Secondary School Wassan</h1>
-            <p>Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
-            <p>SEMIS Code: 416040489 | Established: 1956</p>
-        </div>
-        <div style="width: 120px;"></div> </div>
-
-    <div class="contact-bar">
-        <span>🌐 gbelswassan.github.io</span>
-        <span>📧 gbelswassan@gmail.com</span>
-        <span>📞 +92 300 8909756</span>
-    </div>
-
-    <div class="photo-box">Passport Size<br>Photograph</div>
-
-    <div class="admission-title">ADMISSION FORM (Session: 2026-2027)</div>
-
-    <div class="session-info">
-        <span>G.R No: _______________</span>
-        <span>Admission Date: ___/___/2026</span>
-    </div>
-
-    <div class="section">
-        <span class="section-label">1. Student Information</span>
-        <div class="row"><div class="field"><label>Full Name:</label><span></span></div></div>
-        <div class="row">
-            <div class="field"><label>Father's Name:</label><span></span></div>
-            <div class="field"><label>Surname / Caste:</label><span></span></div>
-        </div>
-        <div class="row">
-            <div class="field"><label>Date of Birth:</label><span></span></div>
-            <div class="field"><label>Religion:</label><span></span></div>
-            <div class="field"><label>Blood Group:</label><span></span></div>
-        </div>
-        <div class="row">
-            <div class="field"><label>Gender:</label> <div class="checkbox-group"><span class="check-box"></span> Male <span class="check-box"></span> Female</div></div>
-            <div class="field"><label>B-Form / CNIC No:</label><span></span></div>
-        </div>
-    </div>
-
-    <div class="section">
-        <span class="section-label">2. Academic Details</span>
-        <div class="row">
-            <div class="field"><label>Admission Sought Class:</label><span></span></div>
-            <div class="field"><label>Previous School:</label><span></span></div>
-        </div>
-        <div class="row">
-            <div class="field"><label>Last Class Passed:</label><span></span></div>
-            <div class="field"><label>Percentage / Grade:</label><span></span></div>
-        </div>
-    </div>
-
-    <div class="section">
-        <span class="section-label">3. Parent / Guardian Details</span>
-        <div class="row">
-            <div class="field"><label>Father's Occupation:</label><span></span></div>
-            <div class="field"><label>Mobile / WhatsApp No:</label><span></span></div>
-        </div>
-        <div class="row"><div class="field"><label>Residential Address:</label><span></span></div></div>
-    </div>
-
-    <div class="section">
-        <span class="section-label">4. Required Documents (Mandatory)</span>
-        <div class="checkbox-group" style="padding: 5px 0;">
-            <span><span class="check-box"></span> 4 Passport Size Photos</span>
-            <span><span class="check-box"></span> Attested Copy of B-Form</span>
-            <span><span class="check-box"></span> Original School Leaving Certificate (SLC)</span>
-            <span><span class="check-box"></span> Copy of Father's CNIC</span>
-            <span><span class="check-box"></span> Previous Class Result Card</span>
-        </div>
-    </div>
-
-    <div class="declaration">
-        <strong>DECLARATION:</strong> I hereby declare that the information provided is correct. I agree to follow all school rules and maintain discipline.
-        <div class="footer-sigs">
-            <div class="sig-box">Signature of Parent</div>
-            <div class="sig-box">Date</div>
-        </div>
-    </div>
-
-    <div class="office-use">
-        <center><strong>FOR OFFICE USE ONLY</strong></center><br>
-        <div class="row">
-            <div class="field"><label>Verified Documents:</label> <span class="check-box"></span> All OK</div>
-            <div class="field"><label>Admission Status:</label> <span class="check-box"></span> Approved <span class="check-box"></span> Pending</div>
-        </div>
-        <div class="footer-sigs">
-            <div class="sig-box">Class Teacher Signature</div>
-            <div class="sig-box">Head Master Stamp</div>
-        </div>
-    </div>
+<div style="text-align: center; margin-bottom: 10px;">
+    <button onclick="window.print()" style="padding: 10px 20px; cursor: pointer;">Print Master Admission Form 🖨️</button>
 </div>
 
-</body>
-                                                             </html>
+<div class="form-container">
+    <table class="header-table">
+        <tr>
+            <td width="20%">
+                <img src="../logo.png.png" alt="School Logo" class="logo-img">
+            </td>
+            <td width="60%" style="text-align: center;">
+                <h2 style="color: #002d5b; margin: 0;">GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h2>
+                <p style="margin: 5px 0;">Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
+                <p><strong>SEMIS Code: 416040489 | Established: 1956</strong></p>
+            </td>
+            <td width="20%" style="border: 1px dashed #333; text-align: center; font-size: 12px;">
+                Passport Size Photograph
+            </td>
+        </tr>
+    </table>
 
+    <h3 style="background: #002d5b; color: white; text-align: center; padding: 5px;">ADMISSION FORM (Session: 2026-2027)</h3>
+    
+    </div>
+
+</body>
+</html>
