@@ -12,7 +12,6 @@
         body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: #333; direction: rtl; text-align: right; }
         
         header { 
-            /* بيڪ گرائونڊ اميج چيڪ ڪريو، جيڪڏهن img 2.png نه هلي ته img 2.png.png ڪري ڏسو */
             background: linear-gradient(rgba(0,45,91,0.85), rgba(0,45,91,0.85)), url('img 2.png');
             background-size: cover; background-position: center; color: white; padding: 60px 20px; text-align: center; border-bottom: 8px solid var(--secondary);
         }
@@ -27,10 +26,7 @@
         .nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; cursor: pointer; }
         .nav-links a:hover { color: var(--secondary); }
 
-        .dropdown-content { display: none; position: absolute; top: 100%; right: 0; background-color: white; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; border-radius: 5px; margin-top: 10px; }
-        .dropdown-content a { color: #333 !important; padding: 12px 16px; display: block; font-size: 0.85rem; border-bottom: 1px solid #eee; text-align: right; }
-        .dropdown-content a:hover { background-color: #f1f1f1; color: var(--primary) !important; }
-        .dropdown:hover .dropdown-content { display: block; }
+        /* Dropdown CSS هٽائي وئي آهي ڇاڪاڻ ته هاڻي سڌو لنڪ آهي */
 
         .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
         .hamburger div { width: 25px; height: 3px; background-color: white; border-radius: 2px; }
@@ -40,8 +36,6 @@
             .nav-links { display: none; position: absolute; top: 100%; right: 0; width: 100%; background: var(--primary); flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
             .nav-links.active { display: flex; }
             .nav-links li { margin: 15px 0; width: 100%; }
-            .dropdown-content { position: static; width: 100%; box-shadow: none; background: #003a75; }
-            .dropdown-content a { color: white !important; text-align: center; }
         }
 
         .notification-bell {
@@ -89,7 +83,7 @@
 </head>
 <body>
 
-<div class="notification-bell" onclick="window.open('https://forms.gle/JHjrqTRcTzioHAU56', '_blank')">🔔</div>
+<div class="notification-bell" onclick="window.open('admission-portal/index.html', '_blank')">🔔</div>
 
 <header>
     <img src="logo.png.png" alt="Logo" class="school-logo">
@@ -115,13 +109,7 @@
         <li><a href="#links">Links</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#result">Result</a></li>
-        <li class="dropdown">
-            <a href="javascript:void(0)">Admission ▾</a>
-            <div class="dropdown-content">
-                <a href="https://forms.gle/JHjrqTRcTzioHAU56" target="_blank">1. Online Admission 📥</a>
-                <a href="admission-portal/index.html" target="_blank">2. Manual Form (Print)</a>
-            </div>
-        </li>
+        <li><a href="admission-portal/index.html">Admission</a></li>
     </ul>
 </nav>
 
