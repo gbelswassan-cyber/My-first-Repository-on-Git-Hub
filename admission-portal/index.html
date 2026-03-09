@@ -11,10 +11,8 @@
         .page-border { background: white; width: 210mm; min-height: 297mm; padding: 15mm; border: 4px solid var(--primary); box-shadow: 0 0 20px rgba(0,0,0,0.2); position: relative; box-sizing: border-box; }
 
         .selection-menu { background: #eef6ff; padding: 15px; border: 2px dashed var(--primary); border-radius: 12px; margin-bottom: 25px; text-align: center; width: 100%; max-width: 800px; box-sizing: border-box; }
-        .menu-title { margin: 0 0 10px 0; color: var(--primary); font-size: 18px; font-weight: bold; }
-        .btn-choice { padding: 12px 25px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; color: white; margin: 5px; font-size: 14px; transition: 0.3s; }
+        .btn-choice { padding: 12px 25px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; color: white; margin: 5px; font-size: 14px; }
         .btn-manual { background: #333; }
-        .btn-online { background: var(--primary); }
 
         .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 20px; }
         .logo-circle { width: 95px; height: 95px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; }
@@ -23,18 +21,18 @@
         .school-info p { margin: 4px 0; font-size: 11px; font-weight: 600; }
         .admission-tag { font-size: 13px; color: var(--accent); font-weight: bold; border: 1.5px solid #000; padding: 3px 15px; display: inline-block; margin-top: 5px; border-radius: 4px; }
 
-        .photo-box { width: 110px; height: 130px; border: 2px dashed #555; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 11px; background: #fdfdfd; font-weight: bold; }
+        .photo-box { width: 110px; height: 130px; border: 2px dashed #555; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 11px; font-weight: bold; }
 
         .section { border: 1.5px solid #000; padding: 18px 12px 10px 12px; border-radius: 6px; margin-bottom: 18px; position: relative; }
-        .section-label { position: absolute; top: -11px; left: 15px; background: white; padding: 0 10px; font-weight: 800; font-size: 12px; color: var(--accent); text-transform: uppercase; }
+        .section-label { position: absolute; top: -11px; left: 15px; background: white; padding: 0 5px; font-weight: 800; font-size: 12px; color: var(--accent); text-transform: uppercase; }
         .row { display: flex; gap: 12px; margin-bottom: 12px; }
         .field { flex: 1; display: flex; flex-direction: column; }
         label { font-weight: bold; font-size: 11px; margin-bottom: 4px; color: #222; }
         
-        /* Removed background and placeholder text for pure blank effect */
         input, select { padding: 8px; border: 1px solid #999; border-radius: 4px; font-size: 13px; background: #fff; }
 
-        .btn-whatsapp-submit { background: var(--whatsapp); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; width: 100%; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        /* Online Button Styling */
+        .btn-whatsapp-submit { background: var(--whatsapp); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; width: 100%; margin: 15px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
         .office-section { border: 2px solid var(--primary); padding: 15px; background: #f9f9f9; border-radius: 8px; margin-top: 25px; }
         .office-title { text-align: center; font-weight: 900; text-decoration: underline; margin-bottom: 15px; font-size: 14px; }
@@ -45,69 +43,60 @@
             .no-print { display: none !important; }
             body { padding: 0; background: white; }
             .page-border { border: 2.5px solid var(--primary); box-shadow: none; width: 100%; margin: 0; }
-            input { border: none !important; border-bottom: 1px dotted #000 !important; }
-            /* This hides any text inside inputs during print if they were filled online */
-            input::placeholder { color: transparent !important; } 
+            /* Hide placeholder and text only in print */
+            input { border: none !important; border-bottom: 1px dotted #000 !important; background: transparent !important; color: transparent !important; }
+            input::placeholder { color: transparent !important; }
         }
     </style>
 </head>
 <body>
 
     <div class="selection-menu no-print">
-        <p class="menu-title">داخلا پورٽل ۾ ڀليڪار</p>
-        <button class="btn-choice btn-manual" onclick="window.print()">Manual Form (خالي فارم پرنٽ ڪريو) 🖨️</button>
+        <p style="margin:0 0 10px 0; font-weight:bold; color:var(--primary);">داخلا پورٽل</p>
+        <button class="btn-choice btn-manual" onclick="window.print()">Manual Form (پرنٽ ڪريو) 🖨️</button>
     </div>
 
     <div class="page-border">
-        <div class="header" id="form-top">
-            <img src="https://gbelswassan-cyber.github.io/logo.png.png" class="logo-circle" alt="GBELS Logo">
+        <div class="header">
+            <img src="https://gbelswassan-cyber.github.io/logo.png.png" class="logo-circle">
             <div class="school-info">
                 <h1>GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h1>
-                <p>Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
+                <p>Village Muhammad Sharif Wassan, Naushahro Feroze</p>
                 <p>SEMIS Code: 416040489 | Established: 1956</p>
                 <span class="admission-tag">ADMISSION FORM (Session: 2026-2027)</span>
             </div>
-            <div class="photo-box">Passport Size<br>Photograph Here</div>
+            <div class="photo-box">Passport Size<br>Photograph</div>
         </div>
 
-        <form id="admissionForm">
+        <form>
             <div class="section">
-                <span class="section-label">1. Student Information (شاگرد جي معلومات)</span>
+                <span class="section-label">1. Student Information</span>
                 <div class="row">
-                    <div class="field"><label>Student Full Name:</label><input type="text" id="s_name" required></div>
-                    <div class="field"><label>Father's Name:</label><input type="text" id="f_name" required></div>
+                    <div class="field"><label>Student Full Name:</label><input type="text" placeholder="Enter Name"></div>
+                    <div class="field"><label>Father's Name:</label><input type="text" placeholder="Enter Father Name"></div>
                 </div>
                 <div class="row">
-                    <div class="field"><label>Surname / Caste:</label><input type="text" id="caste" required></div>
-                    <div class="field"><label>Date of Birth:</label><input type="date" id="dob" required></div>
-                    <div class="field">
-                        <label>Gender:</label>
-                        <select id="gender"><option>Male</option><option>Female</option></select>
-                    </div>
+                    <div class="field"><label>Surname / Caste:</label><input type="text" placeholder="Caste"></div>
+                    <div class="field"><label>Date of Birth:</label><input type="date"></div>
+                    <div class="field"><label>Gender:</label><select><option>Male</option><option>Female</option></select></div>
                 </div>
                 <div class="row">
-                    <div class="field"><label>B-Form / CNIC Number:</label><input type="text" id="cnic" required></div>
-                    <div class="field"><label>Religion:</label><input type="text" id="religion" value="Islam"></div>
+                    <div class="field"><label>B-Form / CNIC Number:</label><input type="text" placeholder="45302-XXXXXXX-X"></div>
+                    <div class="field"><label>Religion:</label><input type="text" value="Islam"></div>
                 </div>
             </div>
 
-            <div class="section">
-                <span class="section-label">2. Academic & Contact Details</span>
-                <div class="row">
-                    <div class="field"><label>Admission Required in Class:</label><input type="text" id="s_class" required></div>
-                    <div class="field"><label>Previous School Name:</label><input type="text" id="prev_school"></div>
-                </div>
-                <div class="row">
-                    <div class="field"><label>Guardian Mobile No (WhatsApp):</label><input type="text" id="phone" required></div>
-                    <div class="field"><label>Residential Address:</label><input type="text" id="address" required></div>
-                </div>
+            <div class="no-print">
+                <button type="button" class="btn-whatsapp-submit">
+                    Apply Online & Send via WhatsApp ✅
+                </button>
             </div>
 
             <div class="office-section">
                 <div class="office-title">FOR OFFICE USE ONLY (صرف آفيس جي استعمال لاءِ)</div>
                 <div class="row">
-                    <div class="field"><label>G.R Number:</label><input type="text" readonly></div>
-                    <div class="field"><label>Admission Date:</label><input type="text" readonly></div>
+                    <div class="field"><label>G.R Number:</label><input type="text"></div>
+                    <div class="field"><label>Admission Date:</label><input type="text"></div>
                     <div class="field"><label>Status:</label><span>[ ] Approved [ ] Pending</span></div>
                 </div>
                 <div class="signature-row">
