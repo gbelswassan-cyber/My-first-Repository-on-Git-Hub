@@ -9,34 +9,20 @@
         @media print { 
             .no-print { display: none; } 
             body { padding: 0; margin: 0; background: white; } 
-            .page-border { 
-                border: 2px solid #000; 
-                width: 210mm; 
-                height: 297mm; 
-                padding: 10mm !important; 
-                box-shadow: none; 
-            } 
+            .page-border { border: 2px solid #000; width: 210mm; height: 297mm; padding: 10mm !important; box-shadow: none; } 
         }
         
-        :root { --primary: #002d5b; --gold: #c5a059; }
+        :root { --primary: #002d5b; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f0f0f0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         
-        .page-border { 
-            background: white; 
-            width: 210mm; 
-            min-height: 297mm; 
-            padding: 15mm; 
-            box-sizing: border-box; 
-            border: 6px double var(--primary); 
-            position: relative;
-        }
+        .page-border { background: white; width: 210mm; min-height: 297mm; padding: 15mm; box-sizing: border-box; border: 6px double var(--primary); position: relative; }
 
-        /* Header Fix for Logo and Photo Box */
+        /* Header Layout */
         .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
         .logo-container { width: 100px; text-align: left; }
         
-        /* درست ٿيل فائل جو نالو هتي آهي */
-        .logo-img { width: 85px; height: auto; display: block; }
+        /* درست ٿيل لوگو اسٽائل */
+        .logo-img { width: 90px; height: auto; display: block; }
 
         .school-info { flex: 1; text-align: center; }
         .school-info h1 { margin: 0; color: var(--primary); font-size: 18px; font-weight: bold; text-transform: uppercase; }
@@ -55,10 +41,7 @@
         .field label { font-weight: bold; font-size: 11px; margin-right: 5px; white-space: nowrap; }
         .field span { border-bottom: 1px dotted #000; flex: 1; height: 14px; }
 
-        .checkbox-group { display: flex; gap: 10px; font-size: 10px; font-weight: bold; }
-        .check-box { width: 12px; height: 12px; border: 1px solid #000; display: inline-block; margin-right: 3px; }
-
-        .footer-sigs { display: flex; justify-content: space-between; margin-top: 35px; text-align: center; }
+        .footer-sigs { display: flex; justify-content: space-between; margin-top: 40px; text-align: center; }
         .sig-box { width: 180px; border-top: 1.2px solid #000; padding-top: 4px; font-size: 11px; font-weight: bold; }
 
         .btn-print { background: var(--primary); color: white; padding: 12px 30px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; margin-bottom: 20px; }
@@ -73,7 +56,7 @@
 <div class="page-border">
     <div class="header">
         <div class="logo-container">
-            <img src="logo.png.png" alt="GBELS Logo" class="logo-img">
+            <img src="logo.png.png" alt="School Logo" class="logo-img">
         </div>
         <div class="school-info">
             <h1>GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h1>
@@ -106,52 +89,29 @@
         <div class="row">
             <div class="field"><label>Date of Birth:</label><span></span></div>
             <div class="field"><label>Religion:</label><span></span></div>
-            <div class="field"><label>Gender:</label> <div class="checkbox-group"><span><span class="check-box"></span> Male</span><span><span class="check-box"></span> Female</span></div></div>
+            <div class="field"><label>Gender: [ ] Male [ ] Female</label></div>
         </div>
-        <div class="row"><div class="field"><label>B-Form / CNIC No:</label><span></span></div></div>
     </div>
 
     <div class="section">
         <span class="section-label">2. ACADEMIC DETAILS</span>
         <div class="row">
-            <div class="field"><label>Admission Sought Class:</label><span></span></div>
+            <div class="field"><label>Class:</label><span></span></div>
             <div class="field"><label>Previous School:</label><span></span></div>
         </div>
     </div>
 
     <div class="section">
-        <span class="section-label">3. PARENT / GUARDIAN DETAILS</span>
+        <span class="section-label">3. PARENT DETAILS</span>
         <div class="row">
-            <div class="field"><label>Occupation:</label><span></span></div>
-            <div class="field"><label>Mobile / WhatsApp:</label><span></span></div>
-        </div>
-        <div class="row"><div class="field"><label>Address:</label><span></span></div></div>
-    </div>
-
-    <div class="section">
-        <span class="section-label">4. DOCUMENTS SUBMITTED</span>
-        <div class="checkbox-group" style="display: grid; grid-template-columns: 1fr 1fr; padding-top: 5px;">
-            <span><span class="check-box"></span> 4 Photos</span>
-            <span><span class="check-box"></span> Copy of B-Form</span>
-            <span><span class="check-box"></span> Original SLC</span>
-            <span><span class="check-box"></span> CNIC Father</span>
+            <div class="field"><label>Mobile No:</label><span></span></div>
+            <div class="field"><label>CNIC:</label><span></span></div>
         </div>
     </div>
 
-    <div class="footer-sigs" style="margin-top: 40px;">
-        <div class="sig-box">Signature of Parent</div>
-        <div class="sig-box">Admission Incharge</div>
-    </div>
-
-    <div style="margin-top: 20px; border: 1.5px solid var(--primary); padding: 10px; border-radius: 5px;">
-        <center><strong>FOR OFFICE USE ONLY</strong></center><br>
-        <div class="row">
-            <div class="field"><label>Status:</label> <span class="check-box"></span> Approved <span class="check-box"></span> Pending</div>
-        </div>
-        <div class="footer-sigs" style="margin-top: 25px;">
-            <div class="sig-box">Class Teacher</div>
-            <div class="sig-box">Head Master Stamp</div>
-        </div>
+    <div class="footer-sigs">
+        <div class="sig-box">Parent's Signature</div>
+        <div class="sig-box">Head Master Stamp</div>
     </div>
 </div>
 
