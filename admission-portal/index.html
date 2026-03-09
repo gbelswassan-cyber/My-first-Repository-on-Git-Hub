@@ -2,42 +2,130 @@
 <html lang="sd">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master Copy | GBELS WASSAN Admission Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* هتي اوهان جي فارم جي ڊيزائن وارو ڪوڊ هوندو */
-        body { font-family: 'Poppins', sans-serif; direction: rtl; }
-        .form-container { border: 2px solid #002d5b; padding: 20px; width: 800px; margin: auto; position: relative; }
-        .header-table { width: 100%; border-bottom: 2px solid #002d5b; margin-bottom: 10px; }
-        .logo-img { width: 100px; height: 100px; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f4f7f9; margin: 0; padding: 20px; direction: ltr; }
+        .print-btn-container { text-align: center; margin-bottom: 20px; }
+        .print-btn { background: #002d5b; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        
+        .form-container { 
+            width: 850px; margin: auto; background: white; padding: 30px; 
+            border: 3px double #002d5b; box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        }
+        
+        .header-table { width: 100%; border-bottom: 2px solid #002d5b; padding-bottom: 10px; margin-bottom: 15px; }
+        .logo-box { width: 120px; text-align: center; }
+        .logo-img { width: 100px; height: 100px; object-fit: contain; }
+        .school-info { text-align: center; }
+        .photo-box { width: 110px; height: 130px; border: 1px dashed #333; display: flex; align-items: center; justify-content: center; font-size: 11px; text-align: center; }
+        
+        .contact-bar { background: #eef2f7; display: flex; justify-content: space-around; padding: 5px; font-size: 12px; border-radius: 5px; margin-bottom: 15px; border: 1px solid #ddd; }
+        
+        .form-title { background: #002d5b; color: white; text-align: center; padding: 8px; font-size: 18px; font-weight: bold; margin-bottom: 20px; border-radius: 3px; }
+        
+        .info-row { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .field { flex: 1; margin: 0 5px; }
+        .field label { font-weight: bold; font-size: 13px; display: block; margin-bottom: 3px; }
+        .field .input-line { border-bottom: 1px dotted #333; height: 20px; width: 100%; }
+        
+        .section-header { color: #e74c3c; font-weight: bold; border-bottom: 1px solid #e74c3c; margin-bottom: 12px; font-size: 14px; text-transform: uppercase; }
+        
+        .checkbox-group { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; }
+        .check-item { display: flex; align-items: center; font-size: 13px; }
+        .sq-box { width: 15px; height: 15px; border: 1px solid #333; margin-right: 8px; }
+
+        .office-section { margin-top: 30px; border: 2px solid #002d5b; padding: 15px; border-radius: 10px; }
+        .footer-sig { display: flex; justify-content: space-between; margin-top: 40px; }
+        .sig-line { border-top: 1px solid #333; width: 200px; text-align: center; font-size: 13px; padding-top: 5px; }
+
+        @media print { .print-btn-container { display: none; } body { background: white; padding: 0; } .form-container { box-shadow: none; border: 2px solid #002d5b; width: 100%; } }
     </style>
 </head>
 <body>
 
-<div style="text-align: center; margin-bottom: 10px;">
-    <button onclick="window.print()" style="padding: 10px 20px; cursor: pointer;">Print Master Admission Form 🖨️</button>
+<div class="print-btn-container">
+    <button class="print-btn" onclick="window.print()">Print Master Admission Form 🖨️</button>
 </div>
 
 <div class="form-container">
     <table class="header-table">
         <tr>
-            <td width="20%">
-                <img src="../logo.png.png" alt="School Logo" class="logo-img">
+            <td class="logo-box">
+                <img src="../logo.png.png" alt="Logo" class="logo-img">
             </td>
-            <td width="60%" style="text-align: center;">
-                <h2 style="color: #002d5b; margin: 0;">GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h2>
-                <p style="margin: 5px 0;">Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
-                <p><strong>SEMIS Code: 416040489 | Established: 1956</strong></p>
+            <td class="school-info">
+                <h2 style="margin:0; color:#002d5b; font-size: 22px;">GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h2>
+                <p style="margin:5px 0; font-size: 14px;">Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
+                <p style="margin:0; font-weight:bold; font-size: 14px;">SEMIS Code: 416040489 | Established: 1956</p>
             </td>
-            <td width="20%" style="border: 1px dashed #333; text-align: center; font-size: 12px;">
-                Passport Size Photograph
+            <td width="120">
+                <div class="photo-box">Passport Size<br>Photograph</div>
             </td>
         </tr>
     </table>
 
-    <h3 style="background: #002d5b; color: white; text-align: center; padding: 5px;">ADMISSION FORM (Session: 2026-2027)</h3>
-    
+    <div class="contact-bar">
+        <span>🌐 gbelswassan.github.io</span>
+        <span>📧 gbelswassan@gmail.com</span>
+        <span>📞 +923008909756</span>
     </div>
+
+    <div class="form-title">ADMISSION FORM (Session: 2026-2027)</div>
+
+    <div class="section-header">1. STUDENT INFORMATION</div>
+    <div class="info-row">
+        <div class="field" style="flex: 2;"><label>Full Name:</label><div class="input-line"></div></div>
+    </div>
+    <div class="info-row">
+        <div class="field"><label>Father's Name:</label><div class="input-line"></div></div>
+        <div class="field"><label>Surname / Caste:</label><div class="input-line"></div></div>
+    </div>
+    <div class="info-row">
+        <div class="field"><label>Date of Birth:</label><div class="input-line"></div></div>
+        <div class="field"><label>Religion:</label><div class="input-line"></div></div>
+        <div class="field"><label>Blood Group:</label><div class="input-line"></div></div>
+    </div>
+    <div class="checkbox-group">
+        <div class="check-item"><label>Gender:</label></div>
+        <div class="check-item"><div class="sq-box"></div> Male</div>
+        <div class="check-item"><div class="sq-box"></div> Female</div>
+        <div class="field" style="margin-left: 50px;"><label>B-Form / CNIC No:</label><div class="input-line"></div></div>
+    </div>
+
+    <div class="section-header">2. ACADEMIC DETAILS</div>
+    <div class="info-row">
+        <div class="field"><label>Admission Sought Class:</label><div class="input-line"></div></div>
+        <div class="field"><label>Previous School:</label><div class="input-line"></div></div>
+    </div>
+    <div class="info-row">
+        <div class="field"><label>Last Class Passed:</label><div class="input-line"></div></div>
+        <div class="field"><label>Percentage / Grade:</label><div class="input-line"></div></div>
+    </div>
+
+    <div class="section-header">3. REQUIRED DOCUMENTS (MANDATORY)</div>
+    <div class="checkbox-group">
+        <div class="check-item"><div class="sq-box"></div> 4 Passport Size Photos</div>
+        <div class="check-item"><div class="sq-box"></div> Attested Copy of B-Form</div>
+        <div class="check-item"><div class="sq-box"></div> Original SLC</div>
+        <div class="check-item"><div class="sq-box"></div> Copy of Father's CNIC</div>
+    </div>
+
+    <div class="office-section">
+        <div style="text-align: center; font-weight: bold; margin-bottom: 10px;">FOR OFFICE USE ONLY</div>
+        <div class="info-row">
+            <div class="field"><label>Verified Documents:</label><div class="input-line"></div></div>
+            <div class="check-item">Admission Status: </div>
+            <div class="check-item"><div class="sq-box"></div> Approved</div>
+            <div class="check-item"><div class="sq-box"></div> Pending</div>
+        </div>
+        <div class="footer-sig">
+            <div class="sig-line">Class Teacher Signature</div>
+            <div class="sig-line">Head Master Stamp</div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
-
