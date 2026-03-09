@@ -9,7 +9,7 @@
         @media print { 
             .no-print { display: none; } 
             body { padding: 0; margin: 0; background: white; } 
-            .page-border { border: 2px solid #000; width: 210mm; height: 297mm; padding: 10mm !important; box-shadow: none; } 
+            .page-border { border: 2px solid #002d5b; width: 210mm; height: 297mm; padding: 10mm !important; box-shadow: none; } 
         }
         
         :root { --primary: #002d5b; }
@@ -17,34 +17,38 @@
         
         .page-border { background: white; width: 210mm; min-height: 297mm; padding: 15mm; box-sizing: border-box; border: 6px double var(--primary); position: relative; }
 
-        /* Header Layout */
-        .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-        .logo-container { width: 100px; text-align: left; }
+        /* Header Alignment */
+        .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
         
-        /* درست ٿيل لوگو اسٽائل */
-        .logo-img { width: 90px; height: auto; display: block; }
+        /* لوگو جي سيٽنگ */
+        .logo-container { width: 110px; height: 110px; display: flex; align-items: center; justify-content: center; }
+        .logo-img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .school-info { flex: 1; text-align: center; }
-        .school-info h1 { margin: 0; color: var(--primary); font-size: 18px; font-weight: bold; text-transform: uppercase; }
-        .school-info p { margin: 2px 0; font-size: 11px; font-weight: bold; }
+        .school-info { flex: 1; text-align: center; padding: 0 10px; }
+        .school-info h1 { margin: 0; color: var(--primary); font-size: 17px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
+        .school-info p { margin: 3px 0; font-size: 11px; font-weight: bold; }
         
-        .photo-box { width: 100px; height: 120px; border: 1.5px dashed #333; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 9px; background: #fff; }
+        /* فوٽو باڪس جي سيٽنگ */
+        .photo-box { width: 100px; height: 120px; border: 1.5px dashed #333; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; background: #fafafa; font-weight: bold; }
 
-        .contact-bar { background: #f2f2f2; padding: 5px; font-size: 10px; display: flex; justify-content: space-around; border: 1px solid #ccc; margin-bottom: 10px; font-weight: bold; border-radius: 4px; }
-        .admission-title { text-align: center; font-size: 14px; font-weight: bold; padding: 5px; border-top: 1.5px solid #000; border-bottom: 1.5px solid #000; margin-bottom: 10px; }
+        .contact-bar { background: #f2f2f2; padding: 6px; font-size: 10px; display: flex; justify-content: space-around; border: 1px solid #ccc; margin-bottom: 10px; font-weight: bold; border-radius: 4px; }
+        .admission-title { text-align: center; font-size: 15px; font-weight: bold; padding: 6px; border-top: 2px solid #000; border-bottom: 2px solid #000; margin-bottom: 15px; background: #f9f9f9; }
 
-        .section { margin-bottom: 10px; border: 1px solid #000; padding: 12px 10px 5px 10px; border-radius: 4px; position: relative; }
-        .section-label { position: absolute; top: -10px; left: 10px; background: white; padding: 0 5px; font-weight: bold; font-size: 11px; color: #8b0000; }
+        .section { margin-bottom: 12px; border: 1px solid #000; padding: 15px 10px 8px 10px; border-radius: 4px; position: relative; }
+        .section-label { position: absolute; top: -10px; left: 10px; background: white; padding: 0 8px; font-weight: bold; font-size: 11px; color: #8b0000; }
 
-        .row { display: flex; margin-bottom: 8px; }
+        .row { display: flex; margin-bottom: 10px; }
         .field { flex: 1; display: flex; align-items: flex-end; }
         .field label { font-weight: bold; font-size: 11px; margin-right: 5px; white-space: nowrap; }
-        .field span { border-bottom: 1px dotted #000; flex: 1; height: 14px; }
+        .field span { border-bottom: 1px dotted #000; flex: 1; height: 15px; }
 
-        .footer-sigs { display: flex; justify-content: space-between; margin-top: 40px; text-align: center; }
-        .sig-box { width: 180px; border-top: 1.2px solid #000; padding-top: 4px; font-size: 11px; font-weight: bold; }
+        .checkbox-group { display: flex; gap: 15px; font-size: 11px; font-weight: bold; }
+        .check-box { width: 13px; height: 13px; border: 1.5px solid #000; display: inline-block; margin-right: 4px; }
 
-        .btn-print { background: var(--primary); color: white; padding: 12px 30px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; margin-bottom: 20px; }
+        .footer-sigs { display: flex; justify-content: space-between; margin-top: 45px; text-align: center; }
+        .sig-box { width: 200px; border-top: 1.5px solid #000; padding-top: 5px; font-size: 11px; font-weight: bold; }
+
+        .btn-print { background: var(--primary); color: white; padding: 12px 35px; border: none; border-radius: 30px; font-size: 16px; font-weight: bold; cursor: pointer; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
@@ -58,12 +62,16 @@
         <div class="logo-container">
             <img src="logo.png.png" alt="School Logo" class="logo-img">
         </div>
+
         <div class="school-info">
             <h1>GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h1>
             <p>Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
             <p>SEMIS Code: 416040489 | Established: 1956</p>
         </div>
-        <div class="photo-box">Passport Size<br>Photograph</div>
+
+        <div class="photo-box">
+            PASTE<br>PASSPORT SIZE<br>PHOTO HERE
+        </div>
     </div>
 
     <div class="contact-bar">
@@ -74,7 +82,7 @@
 
     <div class="admission-title">ADMISSION FORM (Session: 2026-2027)</div>
 
-    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: bold; font-size: 12px;">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-weight: bold; font-size: 13px;">
         <span>G.R No: _________________</span>
         <span>Admission Date: ____/____/2026</span>
     </div>
@@ -89,29 +97,57 @@
         <div class="row">
             <div class="field"><label>Date of Birth:</label><span></span></div>
             <div class="field"><label>Religion:</label><span></span></div>
-            <div class="field"><label>Gender: [ ] Male [ ] Female</label></div>
+            <div class="field"><label>Gender:</label> 
+                <div class="checkbox-group">
+                    <span><span class="check-box"></span> Male</span>
+                    <span><span class="check-box"></span> Female</span>
+                </div>
+            </div>
         </div>
+        <div class="row"><div class="field"><label>B-Form / CNIC No:</label><span></span></div></div>
     </div>
 
     <div class="section">
         <span class="section-label">2. ACADEMIC DETAILS</span>
         <div class="row">
-            <div class="field"><label>Class:</label><span></span></div>
+            <div class="field"><label>Class in which admission sought:</label><span></span></div>
             <div class="field"><label>Previous School:</label><span></span></div>
         </div>
     </div>
 
     <div class="section">
-        <span class="section-label">3. PARENT DETAILS</span>
+        <span class="section-label">3. PARENT / GUARDIAN DETAILS</span>
         <div class="row">
+            <div class="field"><label>Father's Occupation:</label><span></span></div>
             <div class="field"><label>Mobile No:</label><span></span></div>
-            <div class="field"><label>CNIC:</label><span></span></div>
+        </div>
+        <div class="row"><div class="field"><label>Residential Address:</label><span></span></div></div>
+    </div>
+
+    <div class="section">
+        <span class="section-label">4. DOCUMENTS ATTACHED</span>
+        <div class="checkbox-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <span><span class="check-box"></span> 04 Passport Size Photos</span>
+            <span><span class="check-box"></span> Copy of B-Form (Attested)</span>
+            <span><span class="check-box"></span> Original School Leaving Certificate</span>
+            <span><span class="check-box"></span> Copy of Father's CNIC</span>
         </div>
     </div>
 
     <div class="footer-sigs">
-        <div class="sig-box">Parent's Signature</div>
-        <div class="sig-box">Head Master Stamp</div>
+        <div class="sig-box">Signature of Parent / Guardian</div>
+        <div class="sig-box">Admission Incharge Signature</div>
+    </div>
+
+    <div style="margin-top: 25px; border: 2px solid var(--primary); padding: 12px; border-radius: 6px; background: #fcfcfc;">
+        <center><strong style="font-size: 13px; text-decoration: underline;">FOR OFFICE USE ONLY</strong></center><br>
+        <div class="row">
+            <div class="field"><label>Admission Status:</label> <span class="check-box"></span> Approved <span class="check-box"></span> Pending</div>
+        </div>
+        <div class="footer-sigs" style="margin-top: 30px;">
+            <div class="sig-box">Class Teacher Signature</div>
+            <div class="sig-box">Head Master Stamp & Sign</div>
+        </div>
     </div>
 </div>
 
