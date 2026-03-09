@@ -1,148 +1,150 @@
 <!DOCTYPE html>
-<html lang="sd" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission Portal 2026 | GBELS WASSAN</title>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
+    <title>Government Boys Elementary Lower Secondary School Wassan | Admission Form</title>
     <style>
-        :root { --primary: #0d1b3e; --gold: #c5a059; --bg: #f4f7f9; }
-        body { font-family: 'Arial', sans-serif; background: var(--bg); margin: 0; padding: 20px; text-align: center; }
+        @media print { .no-print { display: none; } body { padding: 0; margin: 0; } .page-border { border: 2px solid #000; width: 100%; height: auto; box-shadow: none; margin: 0; } }
+        :root { --primary: #002d5b; --accent: #8b0000; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f0f0; padding: 20px; direction: ltr; }
+        .page-border { background: white; width: 210mm; min-height: 297mm; margin: auto; padding: 40px; box-sizing: border-box; position: relative; border: 10px double var(--primary); box-shadow: 0 0 20px rgba(0,0,0,0.1); }
         
-        .header-box { background: var(--primary); color: white; padding: 25px; border-radius: 15px; margin-bottom: 30px; border-bottom: 6px solid var(--gold); display: flex; flex-direction: column; align-items: center; }
-        .logo-main { width: 90px; height: 90px; background: white; border-radius: 50%; border: 3px solid var(--gold); padding: 5px; margin-bottom: 10px; }
-
-        .form-container { background: white; max-width: 600px; margin: auto; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-top: 10px solid var(--gold); }
-        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; text-align: right; font-size: 16px; }
+        .header { display: flex; align-items: center; border-bottom: 4px solid var(--primary); padding-bottom: 10px; margin-bottom: 10px; }
+        .logo { width: 100px; height: 100px; object-fit: contain; }
+        .school-info { flex: 1; text-align: center; }
+        .school-info h1 { margin: 0; color: var(--primary); font-size: 20px; text-transform: uppercase; font-weight: bold; }
+        .school-info p { margin: 3px 0; font-weight: bold; font-size: 13px; color: #333; }
         
-        .photo-upload-label { display: block; background: #eee; padding: 15px; border: 2px dashed var(--primary); border-radius: 10px; cursor: pointer; margin-bottom: 10px; font-weight: bold; color: var(--primary); }
-        #photo-preview { width: 100px; height: 120px; border: 2px solid var(--gold); margin: 10px auto; display: none; object-fit: cover; border-radius: 5px; }
+        .contact-bar { background: #f2f2f2; padding: 8px; font-size: 11px; display: flex; justify-content: space-around; border-radius: 5px; margin-bottom: 15px; border: 1px solid #ccc; font-weight: bold; }
+        
+        .admission-title { background: var(--primary); color: white; padding: 10px; text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 20px; border-radius: 5px; }
+        
+        .session-info { display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; border: 1px solid #000; padding: 10px; border-radius: 5px; background: #fafafa; font-size: 13px; }
 
-        .btn { padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; color: white; transition: 0.3s; }
-        .btn-submit { background: var(--primary); width: 100%; font-size: 18px; margin-top: 10px; border: 2px solid var(--gold); }
+        .section { margin-bottom: 15px; border: 1px solid #000; padding: 15px 12px 5px 12px; border-radius: 5px; position: relative; }
+        .section-label { position: absolute; top: -11px; left: 15px; background: white; padding: 0 10px; font-weight: bold; color: var(--accent); font-size: 12px; text-transform: uppercase; }
+        
+        .row { display: flex; flex-wrap: wrap; margin-bottom: 10px; }
+        .field { flex: 1; min-width: 180px; display: flex; align-items: flex-end; margin-bottom: 5px; }
+        .field label { font-weight: bold; margin-right: 8px; font-size: 12px; white-space: nowrap; }
+        .field span { border-bottom: 1px dotted #000; flex: 1; height: 16px; margin-right: 10px; }
 
-        /* PDF Slip Layout */
-        #slip-template { width: 700px; padding: 40px; border: 15px double var(--primary); background: white; position: absolute; left: -9999px; direction: ltr; text-align: left; }
-        .pdf-header { text-align: center; border-bottom: 4px solid var(--gold); padding-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 20px; }
-        .pdf-body { margin-top: 30px; display: flex; gap: 30px; }
-        .pdf-details { flex: 1; font-size: 18px; line-height: 2; }
-        .pdf-photo { width: 130px; height: 160px; border: 2px solid #333; object-fit: cover; }
+        .checkbox-group { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 11px; font-weight: bold; }
+        .check-box { width: 14px; height: 14px; border: 1.5px solid #000; display: inline-block; vertical-align: middle; margin-right: 3px; }
+
+        .declaration { font-size: 11px; line-height: 1.6; margin-top: 15px; border: 1px dashed #000; padding: 10px; background: #fffdf5; }
+        .footer-sigs { display: flex; justify-content: space-between; margin-top: 35px; text-align: center; }
+        .sig-box { width: 200px; border-top: 1.5px solid #000; padding-top: 5px; font-size: 12px; font-weight: bold; }
+
+        .office-use { background: #f9f9f9; border: 2px solid var(--primary); margin-top: 20px; padding: 15px; border-radius: 10px; }
+        .photo-box { width: 110px; height: 130px; border: 2px dashed #777; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; position: absolute; right: 45px; top: 130px; background: #fff; }
+
+        .btn-print { background: var(--primary); color: white; padding: 15px 40px; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
-<div class="header-box">
-    <img src="1000110972.png" alt="GBELS Logo" class="logo-main">
-    <h2 style="margin: 5px 0;">GOVT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h2>
-    <p style="margin: 0; color: var(--gold);">ONLINE ADMISSION PORTAL - 2026</p>
-</div>
+<center class="no-print">
+    <button class="btn-print" onclick="window.print()">Print Admission Form 🖨️</button>
+</center>
 
-<div class="form-container">
-    <h3 style="color: var(--primary);">داخلا فارم (Admission Form)</h3>
-    
-    <label for="s_photo" class="photo-upload-label">📸 شاگرد جي تصوير چونڊيو (Upload Photo)</label>
-    <input type="file" id="s_photo" accept="image/*" style="display: none;" onchange="previewImage(this)">
-    <img id="photo-preview" src="">
+<div class="page-border">
+    <div class="header">
+        <img src="logo.png" class="logo" alt="School Logo">
+        <div class="school-info">
+            <h1>Government Boys Elementary Lower Secondary School Wassan</h1>
+            <p>Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
+            <p>SEMIS Code: 416040489 | Established: 1956</p>
+        </div>
+        <div style="width: 100px;"></div>
+    </div>
 
-    <input type="text" id="s_name" placeholder="شاگرد جو نالو (Student Name)">
-    <input type="text" id="f_name" placeholder="پيءُ جو نالو (Father Name)">
-    
-    <select id="s_class">
-        <option value="">ڪلاس چونڊيو (Select Class)</option>
-        <option value="Class 1">ڪلاس پهريون (Class 1st)</option>
-        <option value="Class 2">ڪلاس ٻيون (Class 2nd)</option>
-        <option value="Class 3">ڪلاس ٽيون (Class 3rd)</option>
-        <option value="Class 4">ڪلاس چوٿون (Class 4th)</option>
-        <option value="Class 5">ڪلاس پنجون (Class 5th)</option>
-        <option value="Class 6">ڪلاس ڇهون (Class 6th)</option>
-        <option value="Class 7">ڪلاس ستون (Class 7th)</option>
-        <option value="Class 8">ڪلاس اٺون (Class 8th)</option>
-    </select>
+    <div class="contact-bar">
+        <span>🌐 gbelswassan.github.io</span>
+        <span>📧 gbelswassan@gmail.com</span>
+        <span>📞 +92 300 8909756</span>
+    </div>
 
-    <input type="text" id="s_phone" placeholder="موبائيل نمبر (WhatsApp No)">
+    <div class="photo-box">Passport Size<br>Photograph</div>
 
-    <button class="btn btn-submit" onclick="processAdmission()">فارم جمع ڪريو ۽ سلپ ڊائون لوڊ ڪريو 📥</button>
-</div>
+    <div class="admission-title">ADMISSION FORM (Session: 2026-2027)</div>
 
-<div id="slip-template">
-    <div class="pdf-header">
-        <img src="1000110972.png" style="width: 80px;">
-        <div>
-            <h1 style="color: var(--primary); margin: 0; font-size: 26px;">GBELS WASSAN</h1>
-            <p style="margin: 0; font-weight: bold;">ADMISSION SLIP - SESSION 2026-27</p>
+    <div class="session-info">
+        <span>G.R No: _______________</span>
+        <span>Admission Date: ___/___/2026</span>
+    </div>
+
+    <div class="section">
+        <span class="section-label">1. Student Information</span>
+        <div class="row"><div class="field"><label>Full Name:</label><span></span></div></div>
+        <div class="row">
+            <div class="field"><label>Father's Name:</label><span></span></div>
+            <div class="field"><label>Surname / Caste:</label><span></span></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>Date of Birth:</label><span></span></div>
+            <div class="field"><label>Religion:</label><span></span></div>
+            <div class="field"><label>Blood Group:</label><span></span></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>Gender:</label> <div class="checkbox-group"><span class="check-box"></span> Male <span class="check-box"></span> Female</div></div>
+            <div class="field"><label>B-Form / CNIC No:</label><span></span></div>
         </div>
     </div>
-    <div class="pdf-body">
-        <div class="pdf-details">
-            <p><strong>Registration ID:</strong> <span id="p_id" style="color: darkred;"></span></p>
-            <p><strong>Student Name:</strong> <span id="p_name"></span></p>
-            <p><strong>Father's Name:</strong> <span id="p_fname"></span></p>
-            <p><strong>Class:</strong> <span id="p_class"></span></p>
-            <p><strong>Date:</strong> <span id="p_date"></span></p>
+
+    <div class="section">
+        <span class="section-label">2. Academic Details</span>
+        <div class="row">
+            <div class="field"><label>Admission Sought Class:</label><span></span></div>
+            <div class="field"><label>Previous School:</label><span></span></div>
         </div>
-        <img id="p_photo" class="pdf-photo" src="">
+        <div class="row">
+            <div class="field"><label>Last Class Passed:</label><span></span></div>
+            <div class="field"><label>Percentage / Grade:</label><span></span></div>
+        </div>
     </div>
-    <div style="margin-top: 50px; display: flex; justify-content: space-between;">
-        <p style="border-top: 1px solid #000; width: 180px; text-align: center;">Head Master Stamp</p>
-        <p style="border-top: 1px solid #000; width: 180px; text-align: center;">Admission Officer</p>
+
+    <div class="section">
+        <span class="section-label">3. Parent / Guardian Details</span>
+        <div class="row">
+            <div class="field"><label>Father's Occupation:</label><span></span></div>
+            <div class="field"><label>Mobile / WhatsApp No:</label><span></span></div>
+        </div>
+        <div class="row"><div class="field"><label>Residential Address:</label><span></span></div></div>
+    </div>
+
+    <div class="section">
+        <span class="section-label">4. Required Documents (Mandatory)</span>
+        <div class="checkbox-group" style="padding: 5px 0;">
+            <span><span class="check-box"></span> 4 Passport Size Photos</span>
+            <span><span class="check-box"></span> Attested Copy of B-Form</span>
+            <span><span class="check-box"></span> Original School Leaving Certificate (SLC)</span>
+            <span><span class="check-box"></span> Copy of Father's CNIC</span>
+            <span><span class="check-box"></span> Previous Class Result Card</span>
+        </div>
+    </div>
+
+    <div class="declaration">
+        <strong>DECLARATION:</strong> I hereby declare that the information provided is correct. I agree to follow all school rules and maintain discipline.
+        <div class="footer-sigs">
+            <div class="sig-box">Signature of Parent</div>
+            <div class="sig-box">Date</div>
+        </div>
+    </div>
+
+    <div class="office-use">
+        <center><strong>FOR OFFICE USE ONLY</strong></center><br>
+        <div class="row">
+            <div class="field"><label>Verified Documents:</label> <span class="check-box"></span> All OK</div>
+            <div class="field"><label>Admission Status:</label> <span class="check-box"></span> Approved <span class="check-box"></span> Pending</div>
+        </div>
+        <div class="footer-sigs">
+            <div class="sig-box">Class Teacher Signature</div>
+            <div class="sig-box">Head Master Stamp</div>
+        </div>
     </div>
 </div>
-
-<script>
-    let studentPhotoData = "";
-
-    function previewImage(input) {
-        if (input.files && input.files[0]) {
-            let reader = new FileReader();
-            reader.onload = function(e) {
-                studentPhotoData = e.target.result;
-                document.getElementById('photo-preview').src = studentPhotoData;
-                document.getElementById('photo-preview').style.display = "block";
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    function processAdmission() {
-        const name = document.getElementById('s_name').value;
-        const fname = document.getElementById('f_name').value;
-        const sClass = document.getElementById('s_class').value;
-        const phone = document.getElementById('s_phone').value;
-        const date = new Date().toLocaleDateString('en-GB');
-
-        if(!name || !fname || !sClass || !studentPhotoData) {
-            alert("مهرباني ڪري سڀ معلومات ۽ تصوير اپلوڊ ڪريو!");
-            return;
-        }
-
-        const regID = "W-26-" + Math.floor(1000 + Math.random() * 9000);
-        const record = {regID, name, fname, sClass, date, photo: studentPhotoData};
-
-        generateSlipPDF(record);
-    }
-
-    function generateSlipPDF(record) {
-        document.getElementById('p_id').innerText = record.regID;
-        document.getElementById('p_name').innerText = record.name;
-        document.getElementById('p_fname').innerText = record.fname;
-        document.getElementById('p_class').innerText = record.sClass;
-        document.getElementById('p_date').innerText = record.date;
-        document.getElementById('p_photo').src = record.photo;
-
-        const slip = document.getElementById('slip-template');
-        html2canvas(slip, { scale: 2, useCORS: true }).then(canvas => {
-            const imgData = canvas.toDataURL('image/png');
-            const { jsPDF } = window.jspdf;
-            const pdf = new jsPDF('p', 'mm', 'a4');
-            pdf.addImage(imgData, 'PNG', 10, 10, 190, 0);
-            pdf.save(`Admission_Slip_${record.regID}.pdf`);
-            alert("مبارڪون! داخلا سلپ تيار ٿي وئي آهي.");
-        });
-    }
-</script>
 
 </body>
-</html>
+            </html>
+            
