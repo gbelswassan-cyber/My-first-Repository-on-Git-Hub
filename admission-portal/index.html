@@ -9,9 +9,17 @@
         
         * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
 
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #f0f2f5; 
+            margin: 0; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
         
-        /* پڪي A4 سيٽنگ */
+        /* A4 Page Layout */
         .page-border { 
             background: white; 
             width: 210mm; 
@@ -23,7 +31,7 @@
             margin-bottom: 20px;
         }
 
-        /* مٿيون مينيو جيڪو پرنٽ ۾ نه ايندو */
+        /* Top Menu (No-Print) */
         .selection-menu { 
             background: #eef6ff; 
             padding: 15px; 
@@ -43,41 +51,43 @@
         .school-info { text-align: center; flex: 1; padding: 0 10px; }
         .school-info h1 { margin: 0; color: var(--primary); font-size: 18px; font-weight: 800; }
         .school-info p { margin: 3px 0; font-size: 10px; font-weight: 600; }
-        .admission-tag { font-size: 12px; color: var(--accent); font-weight: bold; border: 1.5px solid #000; padding: 2px 12px; display: inline-block; border-radius: 4px; }
+        .admission-tag { font-size: 12px; color: var(--accent); font-weight: bold; border: 1.5px solid #000; padding: 2px 12px; display: inline-block; border-radius: 4px; margin-top: 5px; }
 
-        .photo-box { width: 100px; height: 120px; border: 2px dashed #555; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; font-weight: bold; }
+        .photo-box { width: 100px; height: 120px; border: 2px dashed #555; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; font-weight: bold; background: #fff; }
 
         /* Form Sections */
-        .section { border: 1.5px solid #000; padding: 15px 12px 5px 12px; border-radius: 6px; margin-bottom: 15px; position: relative; }
-        .section-label { position: absolute; top: -11px; left: 15px; background: white; padding: 0 8px; font-weight: 800; font-size: 11px; color: var(--accent); }
+        .section { border: 1.5px solid #000; padding: 18px 12px 10px 12px; border-radius: 6px; margin-bottom: 18px; position: relative; }
+        .section-label { position: absolute; top: -11px; left: 15px; background: white; padding: 0 10px; font-weight: 800; font-size: 12px; color: var(--accent); }
         
-        .row { display: flex; gap: 10px; margin-bottom: 10px; }
+        .row { display: flex; gap: 12px; margin-bottom: 12px; }
         .field { flex: 1; display: flex; flex-direction: column; }
-        label { font-weight: bold; font-size: 11px; margin-bottom: 4px; }
+        label { font-weight: bold; font-size: 11px; margin-bottom: 4px; color: #333; }
         
-        input, select { padding: 8px; border: 1px solid #999; border-radius: 4px; font-size: 13px; background: #fff; width: 100%; }
+        input, select { padding: 10px; border: 1px solid #999; border-radius: 6px; font-size: 13px; background: #fff; width: 100%; }
 
         .btn-whatsapp-submit { background: var(--whatsapp); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; width: 100%; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
         /* Office Section */
-        .office-section { border: 2px solid var(--primary); padding: 15px; background: #f9f9f9; border-radius: 8px; margin-top: 20px; }
-        .office-title { text-align: center; font-weight: 900; text-decoration: underline; margin-bottom: 15px; font-size: 13px; }
-        .signature-row { display: flex; justify-content: space-between; margin-top: 35px; }
-        .sig-line { border-top: 1.5px solid #000; width: 170px; text-align: center; font-size: 11px; font-weight: bold; padding-top: 5px; }
+        .office-section { border: 2px solid var(--primary); padding: 15px; background: #f9f9f9; border-radius: 8px; margin-top: 25px; }
+        .office-title { text-align: center; font-weight: 900; text-decoration: underline; margin-bottom: 15px; font-size: 14px; }
+        .signature-row { display: flex; justify-content: space-between; margin-top: 40px; }
+        .sig-line { border-top: 1.5px solid #000; width: 180px; text-align: center; font-size: 11px; font-weight: bold; padding-top: 5px; }
 
         @media print {
             .no-print { display: none !important; }
             body { padding: 0; background: white; }
-            .page-border { border: 2px solid var(--primary); box-shadow: none; width: 100%; margin: 0; }
-            input { border: none !important; border-bottom: 1px dotted #000 !important; background: transparent; }
+            .page-border { border: 2px solid var(--primary); box-shadow: none; width: 100%; margin: 0; height: auto; }
+            input { border: none !important; border-bottom: 1px dotted #000 !important; background: transparent; border-radius: 0; padding: 2px 0; }
             select { appearance: none; border: none; border-bottom: 1px dotted #000; }
+            .section { margin-bottom: 20px; }
         }
     </style>
 </head>
 <body>
 
     <div class="selection-menu no-print">
-        <button class="btn-choice btn-manual" onclick="window.print()">Manual Form (Print A4) 🖨️</button>
+        <p style="margin: 0 0 10px 0; font-weight: bold; color: var(--primary);">داخلا پورٽل ۾ ڀليڪار</p>
+        <button class="btn-choice btn-manual" onclick="window.print()">Manual Form (پرنٽ ڪريو) 🖨️</button>
         <button class="btn-choice btn-online" onclick="document.getElementById('form-top').scrollIntoView({behavior: 'smooth'});">Online Apply 📲</button>
     </div>
 
@@ -87,8 +97,8 @@
             <div class="school-info">
                 <h1>GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h1>
                 <p>Village Muhammad Sharif Wassan, Naushahro Feroze</p>
-                <p>SEMIS Code: 416040489 | Session: 2026-2027</p>
-                <span class="admission-tag">ADMISSION FORM</span>
+                <p>SEMIS Code: 416040489 | Established: 1956</p>
+                <span class="admission-tag">ADMISSION FORM (Session: 2026-2027)</span>
             </div>
             <div class="photo-box">Passport Size<br>Photograph</div>
         </div>
@@ -102,7 +112,7 @@
                 </div>
                 <div class="row">
                     <div class="field"><label>Surname / Caste:</label><input type="text" id="caste" placeholder="Caste"></div>
-                    <div class="field"><label>Date of Birth:</label><input type="date"></div>
+                    <div class="field"><label>Date of Birth:</label><input type="text" placeholder="DD-MM-YYYY"></div>
                     <div class="field">
                         <label>Gender:</label>
                         <select id="gender"><option>Male</option><option>Female</option></select>
@@ -130,6 +140,9 @@
                 <button type="button" class="btn-whatsapp-submit" onclick="submitToWhatsApp()">
                     Apply Online & Send via WhatsApp ✅
                 </button>
+                <p style="text-align: center; font-size: 11px; color: #666; font-style: italic;">
+                    نوٽ: واٽس اپ تي ميسيج موڪلڻ کانپوءِ گوگل فارم کلي ويندو.
+                </p>
             </div>
 
             <div class="office-section">
@@ -137,7 +150,7 @@
                 <div class="row">
                     <div class="field"><label>G.R Number:</label><input type="text"></div>
                     <div class="field"><label>Admission Date:</label><input type="text"></div>
-                    <div class="field"><label>Status:</label><span style="font-size: 11px; padding-top: 8px;">[ ] Approved [ ] Pending</span></div>
+                    <div class="field"><label>Status:</label><span style="font-size: 11px; padding-top: 8px;">[ ] Approved &nbsp;&nbsp; [ ] Pending</span></div>
                 </div>
                 
                 <div class="signature-row">
@@ -158,7 +171,11 @@
                 alert("مهرباني ڪري فارم مڪمل ڀريو!");
                 return;
             }
-            const message = `*GBELS WASSAN - NEW ADMISSION*%0AName: ${name}%0AFather: ${fname}%0APhone: ${phone}`;
+            const message = `*GBELS WASSAN - NEW ADMISSION*%0A` +
+                            `*Student Name:* ${name}%0A` +
+                            `*Father Name:* ${fname}%0A` +
+                            `*WhatsApp:* ${phone}%0A` +
+                            `Kindly review my application.`;
             window.open(`https://wa.me/923008909756?text=${message}`, '_blank');
             setTimeout(() => { window.open("https://forms.gle/JHjrqTRcTzioHAU56", "_blank"); }, 3000);
         }
