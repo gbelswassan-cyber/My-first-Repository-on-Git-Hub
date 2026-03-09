@@ -8,7 +8,6 @@
         :root { --primary: #002d5b; --accent: #8b0000; --whatsapp: #25D366; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         
-        /* A4 Page Layout */
         .page-border { background: white; width: 210mm; min-height: 297mm; padding: 15mm; border: 4px solid var(--primary); box-shadow: 0 0 20px rgba(0,0,0,0.2); position: relative; box-sizing: border-box; }
 
         /* Floating Selection Menu */
@@ -17,37 +16,37 @@
         .btn-manual { background: #333; }
         .btn-online { background: var(--primary); }
 
-        /* Header */
-        .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 20px; }
+        /* Header Updated with Web/Email/WP */
+        .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; }
         .logo-circle { width: 95px; height: 95px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; }
-        .school-info { text-align: center; flex: 1; padding: 0 15px; }
-        .school-info h1 { margin: 0; color: var(--primary); font-size: 19px; text-transform: uppercase; font-weight: 800; }
-        .school-info p { margin: 4px 0; font-size: 11px; font-weight: 600; }
-        .admission-tag { font-size: 13px; color: var(--accent); font-weight: bold; border: 1.5px solid #000; padding: 3px 15px; display: inline-block; margin-top: 5px; border-radius: 4px; }
+        .school-info { text-align: center; flex: 1; padding: 0 10px; }
+        .school-info h1 { margin: 0; color: var(--primary); font-size: 18px; text-transform: uppercase; font-weight: 800; }
+        .school-info .address { margin: 2px 0; font-size: 10px; font-weight: 600; }
+        
+        /* New Contact Line */
+        .contact-line { font-size: 9px; font-weight: bold; color: #333; margin-top: 5px; display: flex; justify-content: center; gap: 10px; border-top: 1px solid #ddd; padding-top: 5px; }
+        .contact-line span { color: var(--accent); }
+
+        .admission-tag { font-size: 13px; color: var(--accent); font-weight: bold; border: 1.5px solid #000; padding: 3px 15px; display: inline-block; margin-top: 8px; border-radius: 4px; }
 
         /* Form Sections */
-        .section { border: 1.5px solid #000; padding: 18px 12px 10px 12px; border-radius: 6px; margin-bottom: 18px; position: relative; }
-        .section-label { position: absolute; top: -11px; left: 15px; background: white; padding: 0 10px; font-weight: 800; font-size: 12px; color: var(--accent); }
-        .row { display: flex; gap: 12px; margin-bottom: 12px; }
+        .section { border: 1.5px solid #000; padding: 18px 12px 10px 12px; border-radius: 6px; margin-bottom: 15px; position: relative; }
+        .section-label { position: absolute; top: -11px; left: 15px; background: white; padding: 0 10px; font-weight: 800; font-size: 11px; color: var(--accent); }
+        .row { display: flex; gap: 10px; margin-bottom: 10px; }
         .field { flex: 1; display: flex; flex-direction: column; }
-        label { font-weight: bold; font-size: 11px; margin-bottom: 4px; color: #222; }
-        input, select { padding: 8px; border: 1px solid #999; border-radius: 4px; font-size: 13px; background: #fff; }
+        label { font-weight: bold; font-size: 10px; margin-bottom: 3px; color: #222; }
+        input, select { padding: 7px; border: 1px solid #999; border-radius: 4px; font-size: 12px; background: #fff; }
 
-        /* WhatsApp Button */
-        .btn-whatsapp-submit { background: var(--whatsapp); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; width: 100%; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn-whatsapp-submit { background: var(--whatsapp); color: white; padding: 14px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; width: 100%; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
-        /* Office Section */
-        .office-section { border: 2px solid var(--primary); padding: 15px; background: #f9f9f9; border-radius: 8px; margin-top: 25px; }
-        .signature-row { display: flex; justify-content: space-between; margin-top: 40px; }
-        .sig-line { border-top: 1.5px solid #000; width: 180px; text-align: center; font-size: 11px; font-weight: bold; padding-top: 5px; }
+        .office-section { border: 2px solid var(--primary); padding: 12px; background: #f9f9f9; border-radius: 8px; margin-top: 20px; }
+        .signature-row { display: flex; justify-content: space-between; margin-top: 35px; }
+        .sig-line { border-top: 1.5px solid #000; width: 170px; text-align: center; font-size: 10px; font-weight: bold; padding-top: 5px; }
 
-        /* سڀ کان اهم حصو: پرنٽ سيٽنگس */
         @media print {
             .no-print { display: none !important; }
             body { padding: 0; background: white; }
             .page-border { border: 2.5px solid var(--primary); box-shadow: none; width: 100%; margin: 0; }
-            
-            /* هتي اسان Placeholder لکت کي ختم ڪري رهيا آهيون */
             input::placeholder { color: transparent !important; }
             input { border: none !important; border-bottom: 1px dotted #000 !important; background: transparent !important; }
             select { appearance: none; border: none; border-bottom: 1px dotted #000; }
@@ -58,7 +57,7 @@
 
     <div class="selection-menu no-print">
         <p style="margin:0 0 10px 0; font-weight:bold; color:var(--primary);">داخلا پورٽل</p>
-        <button class="btn-choice btn-manual" onclick="window.print()">Manual Form (خالي پرنٽ ڪريو) 🖨️</button>
+        <button class="btn-choice btn-manual" onclick="window.print()">Manual Form (پرنٽ ڪريو) 🖨️</button>
         <button class="btn-choice btn-online" onclick="document.getElementById('admissionForm').scrollIntoView();">Online Apply 📲</button>
     </div>
 
@@ -67,11 +66,18 @@
             <img src="https://gbelswassan-cyber.github.io/logo.png.png" class="logo-circle">
             <div class="school-info">
                 <h1>GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h1>
-                <p>Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
-                <p>SEMIS Code: 416040489 | Established: 1956</p>
+                <p class="address">Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
+                <p class="address" style="font-size: 9px;">SEMIS Code: 416040489 | Established: 1956</p>
+                
+                <div class="contact-line">
+                    🌐 <span>gbelswassan-cyber.github.io</span> | 
+                    📧 <span>gbelswassan@gmail.com</span> | 
+                    💬 <span>+92 300 8909756</span>
+                </div>
+                
                 <span class="admission-tag">ADMISSION FORM (Session: 2026-2027)</span>
             </div>
-            <div style="width:110px; height:130px; border:2px dashed #555; text-align:center; padding-top:40px; font-size:10px;">Passport Size Photo</div>
+            <div style="width:100px; height:120px; border:1.5px dashed #555; text-align:center; padding-top:35px; font-size:9px; font-weight:bold;">Passport Size Photo</div>
         </div>
 
         <form id="admissionForm">
@@ -111,7 +117,7 @@
             </div>
 
             <div class="office-section">
-                <p style="text-align:center; font-weight:bold;">FOR OFFICE USE ONLY (صرف آفيس جي استعمال لاءِ)</p>
+                <p style="text-align:center; font-weight:bold; font-size:12px; margin:0 0 10px 0;">FOR OFFICE USE ONLY (صرف آفيس جي استعمال لاءِ)</p>
                 <div class="row">
                     <div class="field"><label>G.R Number:</label><input type="text"></div>
                     <div class="field"><label>Admission Date:</label><input type="text"></div>
