@@ -8,22 +8,20 @@
         :root { --primary: #002d5b; --accent: #8b0000; --whatsapp: #25D366; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f0f2f5; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
         
-        /* Top Navigation Bar (The part you missed) */
+        /* Navigation (Web Only) */
         .top-nav { width: 100%; max-width: 210mm; background: #eef6ff; border: 2px dashed var(--primary); border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 20px; box-sizing: border-box; }
-        .top-nav h2 { margin: 0 0 10px 0; font-size: 16px; color: var(--primary); }
         .nav-buttons { display: flex; justify-content: center; gap: 10px; }
         .btn-nav { padding: 10px 20px; border-radius: 6px; border: none; font-weight: bold; cursor: pointer; color: white; text-decoration: none; font-size: 14px; }
         .btn-manual { background: #333; }
         .btn-online { background: var(--primary); }
 
-        /* Main Form Paper */
+        /* Form Paper */
         .page-border { background: white; width: 210mm; min-height: 297mm; padding: 15mm; border: 3px solid var(--primary); box-shadow: 0 0 20px rgba(0,0,0,0.1); position: relative; box-sizing: border-box; }
         
         .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; }
         .logo-circle { width: 90px; height: 90px; border-radius: 50%; border: 2px solid var(--primary); object-fit: cover; }
         .school-info { text-align: center; flex: 1; padding: 0 10px; }
         .school-info h1 { margin: 0; color: var(--primary); font-size: 17px; font-weight: 800; line-height: 1.2; }
-        .school-info p { font-size: 10px; margin: 3px 0; font-weight: bold; color: #333; }
         .admission-tag { font-size: 12px; color: var(--accent); font-weight: bold; border: 1.5px solid #000; padding: 4px 15px; display: inline-block; margin-top: 8px; border-radius: 4px; background: #fff1f1; }
 
         .section { border: 1.5px solid #000; padding: 18px 12px 10px 12px; border-radius: 8px; margin-bottom: 18px; position: relative; }
@@ -33,18 +31,24 @@
         label { font-weight: bold; font-size: 11px; margin-bottom: 4px; color: #222; }
         input { padding: 8px; border: 1px solid #999; border-radius: 4px; font-size: 12px; width: 100%; box-sizing: border-box; }
 
+        /* WhatsApp Button */
         .apply-area { margin: 20px 0; text-align: center; }
-        .btn-whatsapp { background: var(--whatsapp); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .note { font-size: 10px; color: #d63031; margin-top: 8px; font-weight: bold; }
+        .btn-whatsapp { background: var(--whatsapp); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
         .sig-row { display: flex; justify-content: space-between; margin-top: 40px; }
         .sig-box { border-top: 1.2px solid #000; width: 30%; text-align: center; font-size: 10px; font-weight: bold; padding-top: 5px; }
 
+        /* Print Logic to fix "Filled Form" issue */
         @media print {
             .no-print { display: none !important; }
             body { padding: 0; background: white; }
             .page-border { box-shadow: none; border: 2px solid #000; width: 100%; margin: 0; padding: 10mm; }
-            input { border: none !important; border-bottom: 1px dotted #000 !important; }
+            
+            /* This line makes placeholders invisible during print */
+            input::placeholder { color: transparent !important; }
+            
+            /* Making inputs look like empty lines for manual writing */
+            input { border: none !important; border-bottom: 1px dotted #000 !important; background: transparent !important; }
         }
     </style>
 </head>
@@ -53,7 +57,7 @@
     <div class="top-nav no-print">
         <h2>داخلہ پورٽل تي ڀليڪار</h2>
         <div class="nav-buttons">
-            <button class="btn-nav btn-manual" onclick="window.print()">Manual Form (پرنٽ ڪريو) 🖨️</button>
+            <button class="btn-nav btn-manual" onclick="window.print()">Print Manual Form 🖨️</button>
             <button class="btn-nav btn-online" onclick="document.getElementById('online-btn').scrollIntoView()">Online Apply 📲</button>
         </div>
     </div>
@@ -64,46 +68,42 @@
             <div class="school-info">
                 <h1>GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h1>
                 <p>Village Muhammad Sharif Wassan, Naushahro Feroze</p>
-                <div style="font-size: 9px; margin-top: 5px; font-weight: bold; color: #555;">
-                    SEMIS Code: 416040489 | Established: 1956
-                </div>
-                <span class="admission-tag">ADMISSION FORM (Session: 2026-2027)</span>
+                <div style="font-size: 9px; margin-top: 5px; font-weight: bold;">SEMIS Code: 416040489</div>
+                <span class="admission-tag">ADMISSION FORM (2026-2027)</span>
             </div>
-            <div style="width:100px; height:120px; border:1px dashed #000; text-align:center; font-size:9px; padding-top:40px;">Passport Size Photo</div>
+            <div style="width:100px; height:120px; border:1px dashed #000; text-align:center; font-size:9px; padding-top:40px;">Passport Photo</div>
         </div>
 
         <form id="admissionForm">
             <div class="section">
-                <span class="section-label">1. STUDENT INFORMATION (شاگرد جي معلومات)</span>
+                <span class="section-label">1. STUDENT INFORMATION</span>
                 <div class="row">
-                    <div class="field"><label>Student Full Name:</label><input type="text" id="s_name" placeholder="Enter Full Name"></div>
+                    <div class="field"><label>Student Name:</label><input type="text" id="s_name" placeholder="Enter Full Name"></div>
                     <div class="field"><label>Father's Name:</label><input type="text" id="f_name" placeholder="Enter Father Name"></div>
                 </div>
                 <div class="row">
-                    <div class="field"><label>Surname / Caste:</label><input type="text" placeholder="Caste"></div>
-                    <div class="field"><label>Date of Birth:</label><input type="text" placeholder="DD-MM-YYYY"></div>
+                    <div class="field"><label>Surname / Caste:</label><input type="text" placeholder="Enter Caste"></div>
+                    <div class="field"><label>B-Form Number:</label><input type="text" placeholder="45302-XXXXXXX-X"></div>
                 </div>
             </div>
 
             <div class="apply-area no-print" id="online-btn">
-                <button type="button" class="btn-whatsapp" onclick="submitFinal()">
-                    Apply Online & Send via WhatsApp ✅
-                </button>
-                <p class="note">نوٽ: واٽس اپ تي ميسيج موڪلڻ کانپوءِ گوگل فارم پاڻمرادو کلي ويندو.</p>
+                <button type="button" class="btn-whatsapp" onclick="submitFinal()">Apply Online via WhatsApp ✅</button>
+                <p style="font-size: 10px; color: red; font-weight: bold; margin-top: 5px;">نوٽ: واٽس اپ کان پوءِ گوگل فارم تي ڪاغذ اپلوڊ ڪريو.</p>
             </div>
 
             <div class="section">
                 <span class="section-label">2. ACADEMIC & CONTACT DETAILS</span>
                 <div class="row">
-                    <div class="field"><label>Admission Required in Class:</label><input type="text" placeholder="e.g. 6th, 7th"></div>
-                    <div class="field"><label>Previous School Name:</label><input type="text" placeholder="Last School Attended"></div>
+                    <div class="field"><label>Admission in Class:</label><input type="text" placeholder="e.g. 6th"></div>
+                    <div class="field"><label>WhatsApp Number:</label><input type="text" placeholder="03XXXXXXXXX"></div>
                 </div>
             </div>
 
             <div class="section">
-                <p style="text-align:center; font-weight:800; font-size:11px; margin-bottom:15px; border-bottom: 1px solid #000;">FOR OFFICE USE ONLY</p>
+                <p style="text-align:center; font-weight:800; font-size:11px; margin-bottom:20px;">FOR OFFICE USE ONLY</p>
                 <div class="sig-row">
-                    <div class="sig-box">Class Teacher Signature</div>
+                    <div class="sig-box">Teacher Signature</div>
                     <div class="sig-box">Admission Incharge</div>
                     <div class="sig-box">Head Master Stamp</div>
                 </div>
@@ -115,14 +115,9 @@
         function submitFinal() {
             const name = document.getElementById('s_name').value;
             const fname = document.getElementById('f_name').value;
-            if(!name || !fname) { alert("مهرباني ڪري شاگرد ۽ پيءُ جو نالو لکو!"); return; }
-
-            const message = `*GBELS WASSAN ADMISSION*%0AStudent: ${name}%0AFather: ${fname}%0A_I am now uploading documents on Google Form._`;
-            window.open(`https://wa.me/923008909756?text=${message}`, '_blank');
-
-            setTimeout(() => {
-                window.location.href = "https://forms.gle/JHjrqTRcTzioHAU56";
-            }, 3000);
+            if(!name || !fname) { alert("نالو لکو!"); return; }
+            window.open(`https://wa.me/923008909756?text=Admission: ${name}`, '_blank');
+            setTimeout(() => { window.location.href = "https://forms.gle/JHjrqTRcTzioHAU56"; }, 3000);
         }
     </script>
 </body>
