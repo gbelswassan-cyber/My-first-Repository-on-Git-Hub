@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Copy | GBELS WASSAN Admission Portal</title>
+    <title>Admission Form | GBELS WASSAN Admission Portal</title>
     <style>
         :root { --primary: #002d5b; --accent: #8b0000; --whatsapp: #25D366; }
         
@@ -35,11 +35,15 @@
         /* Form Sections */
         .section { border: 1.5px solid #000; padding: 18px 12px 10px 12px; border-radius: 6px; margin-bottom: 18px; position: relative; }
         .section-label { position: absolute; top: -11px; left: 15px; background: white; padding: 0 10px; font-weight: 800; font-size: 12px; color: var(--accent); text-transform: uppercase; }
-        .row { display: flex; gap: 12px; margin-bottom: 12px; }
-        .field { flex: 1; display: flex; flex-direction: column; }
+        .row { display: flex; gap: 12px; margin-bottom: 12px; align-items: center; flex-wrap: wrap; }
+        .field { flex: 1; display: flex; flex-direction: column; min-width: 150px; }
         label { font-weight: bold; font-size: 11px; margin-bottom: 4px; color: #222; }
         input, select { padding: 8px; border: 1px solid #999; border-radius: 4px; font-size: 13px; background: #fff; }
         input:focus { border-color: var(--primary); outline: none; background: #f9fcff; }
+
+        /* Checkbox Row Styling */
+        .checkbox-row { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 5px; }
+        .checkbox-row label { display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 12px; }
 
         /* Online Submit Button */
         .btn-whatsapp-submit { background: var(--whatsapp); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; width: 100%; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
@@ -55,10 +59,7 @@
             .no-print { display: none !important; }
             body { padding: 0; background: white; }
             .page-border { border: 2.5px solid var(--primary); box-shadow: none; width: 100%; margin: 0; }
-            
-            /* Strict cleaning of placeholders on print */
             input::placeholder { color: transparent !important; opacity: 0 !important; }
-            
             input { border: none !important; border-bottom: 1px dotted #000 !important; background: transparent !important; }
             select { appearance: none; border: none; border-bottom: 1px dotted #000; }
         }
@@ -117,8 +118,39 @@
                     <div class="field"><label>Previous School Name:</label><input type="text" id="prev_school" placeholder="Last School Attended"></div>
                 </div>
                 <div class="row">
-                    <div class="field"><label>Guardian Mobile No (WhatsApp):</label><input type="text" id="phone" placeholder="03XXXXXXXXX" required></div>
-                    <div class="field"><label>Residential Address:</label><input type="text" id="address" placeholder="Village / City Address" required></div>
+                    <div class="field"><label>Last Class Passed:</label><input type="text" id="last_class" placeholder="Last Class"></div>
+                    <div class="field"><label>Percentage / Grade:</label><input type="text" id="grade" placeholder="Marks or Grade"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <span class="section-label">3. Parent / Guardian Details</span>
+                <div class="row">
+                    <div class="field"><label>Father Occupation:</label><input type="text" id="occupation" placeholder="Father Job"></div>
+                    <div class="field"><label>Mobile / WhatsApp No:</label><input type="text" id="guardian_phone" placeholder="03XXXXXXXXX"></div>
+                </div>
+                <div class="row">
+                    <div class="field"><label>Residential Address:</label><input type="text" id="guardian_address" placeholder="Village / City Address" required></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <span class="section-label">4. Required Documents (Mandatory)</span>
+                <div class="checkbox-row">
+                    <label><input type="checkbox"> 4 Photos</label>
+                    <label><input type="checkbox"> B-Form Copy</label>
+                    <label><input type="checkbox"> SLC</label>
+                    <label><input type="checkbox"> CNIC Copy</label>
+                    <label><input type="checkbox"> Result Card</label>
+                </div>
+            </div>
+
+            <div class="section">
+                <span class="section-label">Declaration</span>
+                <p style="font-size:11px; margin-bottom: 10px;">I hereby declare that the information provided in this admission form is true and correct.</p>
+                <div class="row">
+                    <div class="field"><label>Signature of Parent:</label><input type="text"></div>
+                    <div class="field"><label>Date:</label><input type="date"></div>
                 </div>
             </div>
 
@@ -136,7 +168,12 @@
                 <div class="row">
                     <div class="field"><label>G.R Number:</label><input type="text" readonly></div>
                     <div class="field"><label>Admission Date:</label><input type="text" readonly></div>
-                    <div class="field"><label>Status:</label><span>[ ] Approved [ ] Pending</span></div>
+                </div>
+                <div class="checkbox-row" style="margin-top: 10px;">
+                    <label><input type="checkbox"> Verified Documents</label>
+                    <label><input type="checkbox"> All OK</label>
+                    <label><input type="checkbox"> Approved</label>
+                    <label><input type="checkbox"> Pending</label>
                 </div>
                 
                 <div class="signature-row">
@@ -154,7 +191,7 @@
             const fname = document.getElementById('f_name').value;
             const caste = document.getElementById('caste').value;
             const sClass = document.getElementById('s_class').value;
-            const phone = document.getElementById('phone').value;
+            const phone = document.getElementById('guardian_phone').value;
             const cnic = document.getElementById('cnic').value;
 
             if(name === "" || fname === "" || phone === "") {
@@ -173,10 +210,8 @@
                             `------------------------------%0A` +
                             `Kindly review my application. I am uploading my documents now.`;
 
-            // WhatsApp Redirect
             window.open(`https://wa.me/923008909756?text=${message}`, '_blank');
 
-            // Google Form Redirect (After 3 seconds)
             setTimeout(() => {
                 window.open("https://forms.gle/JHjrqTRcTzioHAU56", "_blank");
             }, 3000);
