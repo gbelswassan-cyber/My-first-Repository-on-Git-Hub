@@ -1,200 +1,260 @@
 <!DOCTYPE html>
-<html lang="sd">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission Portal | GBELS WASSAN</title>
-    <style>
-        :root { --primary: #002d5b; --accent: #8b0000; --success: #28a745; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 10px; direction: rtl; }
-        .form-wrapper { background: white; width: 100%; max-width: 900px; margin: 20px auto; border: 4px double var(--primary); padding: 25px; box-sizing: border-box; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
-        
-        /* Header Styling */
-        .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 25px; }
-        .logo { width: 90px; height: 90px; }
-        .school-title { text-align: center; flex: 1; }
-        .school-title h1 { margin: 0; color: var(--primary); font-size: 20px; font-weight: 800; }
-        .school-title p { margin: 5px 0; font-size: 13px; font-weight: bold; }
-        .photo-box { width: 110px; height: 130px; border: 2px dashed #666; display: flex; align-items: center; justify-content: center; background: #f9f9f9; font-size: 11px; text-align: center; color: #555; overflow: hidden; }
-        .photo-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Form Sections */
-        .section { border: 1.5px solid #333; padding: 20px 15px 15px; border-radius: 6px; margin-bottom: 25px; position: relative; background: #fff; }
-        .section-label { position: absolute; top: -12px; right: 20px; background: #fff; padding: 0 10px; font-weight: bold; font-size: 14px; color: var(--accent); border: 1.5px solid #333; border-radius: 4px; }
-        
-        .row { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
-        .field { flex: 1; display: flex; flex-direction: column; min-width: 200px; }
-        label { font-weight: bold; font-size: 13px; margin-bottom: 5px; color: #333; text-align: right; }
-        input, select { padding: 10px; border: 1px solid #aaa; border-radius: 4px; font-size: 14px; outline: none; transition: border 0.3s; text-align: right; }
-        input:focus { border-color: var(--primary); box-shadow: 0 0 5px rgba(0,45,91,0.2); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-        .btn-submit { background: var(--primary); color: white; padding: 16px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 18px; width: 100%; transition: 0.3s; margin-top: 10px; }
-        .btn-submit:hover { background: #001a35; }
-        .btn-submit:disabled { background: #ccc; cursor: not-allowed; }
+<title>GBELS WASSAN SMART ADMISSION SYSTEM</title>
 
-        .footer-note { text-align: center; font-size: 12px; color: #666; margin-top: 20px; border-top: 1px solid #ddd; padding-top: 10px; }
-        
-        @media (max-width: 600px) { .header { flex-direction: column; } .photo-box { margin-top: 15px; } .field { min-width: 100%; } }
-        @media print { .no-print { display: none !important; } .form-wrapper { border: 2px solid #000; box-shadow: none; } }
-    </style>
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+color:#003366;
+}
+
+.photo-box{
+width:90px;
+height:110px;
+border:2px dashed #333;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:10px;
+}
+
+.photo-box img{
+width:90px;
+height:110px;
+object-fit:cover;
+}
+
+input,select{
+width:100%;
+padding:8px;
+margin:6px 0;
+border:1px solid #ccc;
+}
+
+button{
+background:#003366;
+color:white;
+padding:10px;
+border:none;
+cursor:pointer;
+width:100%;
+margin-top:10px;
+}
+
+.print-btn{
+background:#555;
+}
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
+
 <body>
 
-    <div class="no-print" style="text-align: center; margin-bottom: 10px;">
-        <button onclick="window.print()" style="padding: 8px 20px; cursor: pointer; background: #333; color: #fff; border: none; border-radius: 4px;">فاروم پرنٽ ڪريو 🖨️</button>
-    </div>
+<div class="container">
 
-    <div class="form-wrapper">
-        <div class="header">
-            <img src="https://gbelswassan-cyber.github.io/logo.png.png" class="logo" alt="School Logo">
-            <div class="school-title">
-                <h1>GOVERNMENT BOYS ELEMENTARY LOWER SECONDARY SCHOOL WASSAN</h1>
-                <p>Village Muhammad Sharif Wassan, Taluka & District Naushahro Feroze</p>
-                <p>SEMIS Code: 416040489 | WhatsApp: +92 300 8909756</p>
-                <div style="margin-top: 10px; display: inline-block; padding: 4px 20px; border: 2px solid var(--accent); color: var(--accent); font-weight: bold;">ADMISSION FORM (Session: 2026-2027)</div>
-            </div>
-            <div class="photo-box" id="preview-photo">پاسپورٽ سائيز تصوير هتي لڳايو</div>
-        </div>
+<h1>GBELS WASSAN ADMISSION FORM</h1>
 
-        <form id="admissionForm">
-            <div class="section">
-                <span class="section-label">1. شاگرد جي ذاتي معلومات (Student Information)</span>
-                <div class="row">
-                    <div class="field"><label>شاگرد جو پورو نالو:</label><input type="text" id="s_name" placeholder="مثال: علي احمد" required></div>
-                    <div class="field"><label>والد جو نالو:</label><input type="text" id="f_name" required></div>
-                </div>
-                <div class="row">
-                    <div class="field"><label>ذات / Surname:</label><input type="text" id="caste" placeholder="مثال: واسڻ"></div>
-                    <div class="field"><label>ڄمڻ جي تاريخ:</label><input type="date" id="dob" required></div>
-                    <div class="field"><label>جنس (Gender):</label><select id="gender"><option value="Male">Male (ڇوڪرو)</option><option value="Female">Female (ڇوڪري)</option></select></div>
-                </div>
-                <div class="row">
-                    <div class="field"><label>بي فارم / CNIC Number:</label><input type="text" id="cnic" placeholder="45302-XXXXXXX-X"></div>
-                    <div class="field"><label>مذهب (Religion):</label><input type="text" id="religion" value="Islam"></div>
-                </div>
-            </div>
+<div class="photo-box">
+<input type="file" id="photo" onchange="preview(event)">
+<img id="preview">
+</div>
 
-            <div class="section">
-                <span class="section-label">2. تعليمي معلومات (Academic Details)</span>
-                <div class="row">
-                    <div class="field"><label>مطلوبہ ڪلاس (Admission in Class):</label><input type="text" id="s_class" placeholder="مثال: 6th" required></div>
-                    <div class="field"><label>پراڻي اسڪول جو نالو:</label><input type="text" id="prev_school"></div>
-                </div>
-                <div class="row">
-                    <div class="field"><label>آخري پاس ڪيل ڪلاس:</label><input type="text" id="last_class"></div>
-                    <div class="field"><label>فيصد / گريڊ (Grade/%):</label><input type="text" id="grade"></div>
-                </div>
-            </div>
+<h3>Required Information</h3>
 
-            <div class="section">
-                <span class="section-label">3. سرپرست جي معلومات (Guardian Details)</span>
-                <div class="row">
-                    <div class="field"><label>والد جو ڪاروبار:</label><input type="text" id="occupation"></div>
-                    <div class="field"><label>موبائيل / واٽس اپ نمبر:</label><input type="tel" id="phone" placeholder="0300-1234567" required></div>
-                </div>
-                <div class="row">
-                    <div class="field"><label>رهائشي پتو (Address):</label><input type="text" id="address"></div>
-                </div>
-            </div>
+<input id="name" placeholder="Student Name *">
+<input id="father" placeholder="Father Name *">
+<input id="class" placeholder="Class *">
+<input id="phone" placeholder="WhatsApp Number *">
 
-            <div class="section">
-                <span class="section-label">4. فائلون اپلوڊ ڪريو (Upload Documents)</span>
-                <div class="row">
-                    <div class="field"><label>شاگرد جي تصوير (Photo):</label><input type="file" id="photoInput" accept="image/*" onchange="handleImage(this, 'photo')"></div>
-                    <div class="field"><label>بي فارم يا رزلٽ ڪارڊ:</label><input type="file" id="docInput" accept="image/*" onchange="handleImage(this, 'doc')"></div>
-                </div>
-            </div>
+<h3>Optional Information</h3>
 
-            <button type="button" id="submitBtn" class="btn-submit no-print" onclick="finalSubmit()">آن لائن داخلا فارم جمع ڪريو ✅</button>
-        </form>
+<input id="caste" placeholder="Caste">
+<input id="dob" type="date">
 
-        <div class="footer-note">
-            <p>© 2026 GBELS WASSAN - Digital Admission System</p>
-        </div>
-    </div>
+<select id="gender">
+<option>Male</option>
+<option>Female</option>
+</select>
 
-    <script>
-        // پنهنجو Deploy ڪيل ويب ايپ يو آر ايل هتي لڳايو
-        const scriptURL = 'YOUR_WEB_APP_URL_HERE'; 
+<input id="address" placeholder="Address">
 
-        let photoBase64 = "";
-        let docBase64 = "";
+<h3>Documents Upload</h3>
 
-        // تصويرن کي هينڊل ڪرڻ ۽ پاسپورٽ سائيز ۾ ڪٽڻ
-        function handleImage(input, type) {
-            const file = input.files[0];
-            if (!file) return;
+<label>B-Form</label>
+<input type="file" id="bform">
 
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = new Image();
-                img.onload = function() {
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-                    // Passport Size Dimensions
-                    canvas.width = 600;
-                    canvas.height = 800;
-                    ctx.drawImage(img, 0, 0, 600, 800);
-                    
-                    const dataURL = canvas.toDataURL('image/jpeg', 0.85);
-                    if (type === 'photo') {
-                        photoBase64 = dataURL;
-                        document.getElementById('preview-photo').innerHTML = `<img src="${dataURL}">`;
-                    } else {
-                        docBase64 = dataURL;
-                    }
-                };
-                img.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
+<label>Father CNIC</label>
+<input type="file" id="fcnic">
 
-        async function finalSubmit() {
-            const btn = document.getElementById('submitBtn');
-            const name = document.getElementById('s_name').value;
-            const phone = document.getElementById('phone').value;
+<label>Pass Certificate</label>
+<input type="file" id="pass">
 
-            if (!name || !phone) {
-                alert("مهرباني ڪري شاگرد جو نالو ۽ فون نمبر لازمي لکو.");
-                return;
-            }
+<label>Mark Sheet</label>
+<input type="file" id="marks">
 
-            btn.disabled = true;
-            btn.innerHTML = "ڊيٽا موڪلي پئي وڃي... مهرباني ڪري انتظار ڪريو ⏳";
+<label>Other Certificate</label>
+<input type="file" id="other">
 
-            const formData = new URLSearchParams();
-            formData.append('s_name', name);
-            formData.append('f_name', document.getElementById('f_name').value);
-            formData.append('caste', document.getElementById('caste').value);
-            formData.append('dob', document.getElementById('dob').value);
-            formData.append('gender', document.getElementById('gender').value);
-            formData.append('cnic', document.getElementById('cnic').value);
-            formData.append('religion', document.getElementById('religion').value);
-            formData.append('s_class', document.getElementById('s_class').value);
-            formData.append('prev_school', document.getElementById('prev_school').value);
-            formData.append('last_class', document.getElementById('last_class').value);
-            formData.append('grade', document.getElementById('grade').value);
-            formData.append('occupation', document.getElementById('occupation').value);
-            formData.append('phone', phone);
-            formData.append('address', document.getElementById('address').value);
-            formData.append('photoData', photoBase64);
-            formData.append('docData', docBase64);
+<button onclick="submitForm()">Submit Admission</button>
 
-            try {
-                // گوگل شيٽ ۾ ڊيٽا موڪلڻ
-                await fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' });
-                
-                // ڪاميابي جو ميسيج
-                alert("توهان جو فارم ڪاميابي سان اسڪول رڪارڊ ۾ جمع ٿي ويو آهي! \n\n اسڪول انتظاميه توهان سان جلد رابطو ڪندي.");
-                
-                // فارم ري سيٽ ڪرڻ
-                location.reload();
-            } catch (error) {
-                alert("معافي چاهيون ٿا، فارم جمع نه ٿي سگهيو. مهرباني ڪري انٽرنيٽ چيڪ ڪريو.");
-                btn.disabled = false;
-                btn.innerHTML = "ٻيهر ڪوشش ڪريو ✅";
-            }
-        }
-    </script>
+<button class="print-btn" onclick="window.print()">Manual Print Form</button>
+
+<button onclick="generatePDF()">Download Admission Slip</button>
+
+</div>
+
+<script>
+
+function preview(e){
+
+const reader=new FileReader();
+
+reader.onload=function(){
+document.getElementById("preview").src=reader.result;
+}
+
+reader.readAsDataURL(e.target.files[0]);
+
+}
+
+function toBase64(file){
+
+return new Promise(resolve=>{
+
+const reader=new FileReader();
+
+reader.onload=()=>resolve(reader.result.split(',')[1]);
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+async function submitForm(){
+
+const name=document.getElementById("name").value;
+const father=document.getElementById("father").value;
+const sclass=document.getElementById("class").value;
+const phone=document.getElementById("phone").value;
+
+if(!name || !father || !sclass || !phone){
+
+alert("Required fields missing");
+
+return;
+
+}
+
+function f(id){
+return document.getElementById(id).files[0];
+}
+
+const data={
+
+name:name,
+father:father,
+class:sclass,
+phone:phone,
+
+caste:document.getElementById("caste").value,
+dob:document.getElementById("dob").value,
+gender:document.getElementById("gender").value,
+address:document.getElementById("address").value,
+
+photo:f("photo")?await toBase64(f("photo")):"",
+bform:f("bform")?await toBase64(f("bform")):"",
+fcnic:f("fcnic")?await toBase64(f("fcnic")):"",
+pass:f("pass")?await toBase64(f("pass")):"",
+marks:f("marks")?await toBase64(f("marks")):"",
+other:f("other")?await toBase64(f("other")):""
+
+};
+
+fetch("YOUR_SCRIPT_URL_HERE",{
+
+method:"POST",
+body:JSON.stringify(data)
+
+})
+
+.then(r=>r.text())
+
+.then(res=>{
+
+if(res=="ALREADY"){
+
+alert("Student Already Registered");
+
+return;
+
+}
+
+alert("Admission Submitted");
+
+window.open(
+"https://wa.me/"+phone+"?text=Admission Submitted Successfully"
+);
+
+});
+
+}
+
+/* Admission Slip PDF */
+
+function generatePDF(){
+
+const { jsPDF } = window.jspdf;
+
+const doc=new jsPDF();
+
+var name=document.getElementById("name").value;
+var father=document.getElementById("father").value;
+var sclass=document.getElementById("class").value;
+
+var admNo="ADM"+Math.floor(Math.random()*10000);
+
+doc.setFontSize(18);
+doc.text("GBELS WASSAN",70,20);
+
+doc.setFontSize(14);
+doc.text("Admission Slip",80,30);
+
+doc.setFontSize(12);
+
+doc.text("Admission No: "+admNo,20,50);
+doc.text("Student Name: "+name,20,60);
+doc.text("Father Name: "+father,20,70);
+doc.text("Class: "+sclass,20,80);
+
+doc.save(name+"_Admission_Slip.pdf");
+
+}
+
+</script>
+
 </body>
 </html>
